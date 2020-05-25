@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:background="#657AFF"
     android:orientation="vertical"
-    tools:context=".CadastroActivity">
-
+    tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
