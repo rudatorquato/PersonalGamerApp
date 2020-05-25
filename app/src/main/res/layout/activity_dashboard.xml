@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:id="@+id/card_usuario"
@@ -44,7 +44,7 @@
                         android:layout_height="91dp"
                         android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
                         android:padding="0dp"
-                        android:src="@drawable/teste"
+                        android:src="@drawable/perfil"
                         tools:targetApi="lollipop" />
 
                     <TextView
@@ -56,9 +56,9 @@
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:id="@+id/card_prescricao"
@@ -82,7 +82,7 @@
                         android:layout_height="91dp"
                         android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
                         android:padding="0dp"
-                        android:src="@drawable/QRCode"
+                        android:src="@drawable/qrcode"
                         tools:targetApi="lollipop" />
 
                     <TextView
@@ -94,7 +94,7 @@
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:visibility="visible">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:id="@+id/card_paciente"
@@ -128,7 +128,7 @@
                     <ImageView
                         android:layout_width="98dp"
                         android:layout_height="91dp"
-                        android:src="@drawable/Treino"
+                        android:src="@drawable/treino"
                         android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
                         android:padding="0dp"
                         tools:targetApi="lollipop" />
@@ -142,9 +142,9 @@
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:id="@+id/card_relatorio"
@@ -166,7 +166,7 @@
                     <ImageView
                         android:layout_width="98dp"
                         android:layout_height="91dp"
-                        android:src="@drawable/Personal"
+                        android:src="@drawable/personal"
                         android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
                         android:padding="0dp"
                         tools:targetApi="lollipop" />
@@ -180,10 +180,10 @@
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

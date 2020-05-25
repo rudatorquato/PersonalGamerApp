@@ -136,6 +136,11 @@ public class MainActivity extends AppCompatActivity implements OnItemClicked, Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        startActivity(new Intent(context, DashboardActivity.class)
+                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                .putExtra("id", user_id));
+        finish();
+
         preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
 
         loadViews();

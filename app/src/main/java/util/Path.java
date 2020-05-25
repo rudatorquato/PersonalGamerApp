@@ -24,6 +24,6 @@ public class Path {
     //Delete Usuario/id
     public static String urlDeleteMeasures = ip + "personalgamer/users/";
 
-    //Get QRCode/id
+    //Get qrcode/id
     public static String urQRCode = ip + "personalgamer/QRCODE/";
 }
