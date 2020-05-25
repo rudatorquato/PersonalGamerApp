@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Main2Activity"
-    tools:showIn="@layout/app_bar_main2">
+    tools:showIn="@layout/app_bar_main2"
+    android:background="#657AFF">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,15 +37,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:background="#657AFF"
                     android:gravity="center">
 
                     <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/circle_shape"
-                        android:src="@drawable/ic_person_add_black_24dp"
-                        android:backgroundTint="@color/design_default_color_primary"
-                        android:padding="10dp"
+                        android:layout_width="98dp"
+                        android:layout_height="91dp"
+                        android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
+                        android:padding="0dp"
+                        android:src="@drawable/teste"
                         tools:targetApi="lollipop" />
 
                     <TextView
@@ -52,21 +53,7 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"
-                        android:text="Usuários"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Cadastrar"
-                        android:padding="5dp"
-                        android:textColor="@android:color/darker_gray"/>
+                        android:text="Perfil"/>
 
                 </LinearLayout>
 
@@ -88,15 +75,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:background="#657AFF"
                     android:gravity="center">
 
                     <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/circle_shape"
-                        android:src="@drawable/ic_assignment_black_24dp"
-                        android:backgroundTint="@color/pink"
-                        android:padding="10dp"
+                        android:layout_width="98dp"
+                        android:layout_height="91dp"
+                        android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
+                        android:padding="0dp"
+                        android:src="@drawable/QRCode"
                         tools:targetApi="lollipop" />
 
                     <TextView
@@ -104,21 +91,7 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"
-                        android:text="Prescrição"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Cadastrar"
-                        android:padding="5dp"
-                        android:textColor="@android:color/darker_gray"/>
+                        android:text="QR-Code"/>
 
                 </LinearLayout>
 
@@ -150,15 +123,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:background="#657AFF"
                     android:gravity="center">
 
                     <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/circle_shape"
-                        android:src="@drawable/ic_person_add_black_24dp"
-                        android:backgroundTint="@color/green"
-                        android:padding="10dp"
+                        android:layout_width="98dp"
+                        android:layout_height="91dp"
+                        android:src="@drawable/Treino"
+                        android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
+                        android:padding="0dp"
                         tools:targetApi="lollipop" />
 
                     <TextView
@@ -166,21 +139,7 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"
-                        android:text="Pacientes"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Cadastrar"
-                        android:padding="5dp"
-                        android:textColor="@android:color/darker_gray"/>
+                        android:text="Treino"/>
 
                 </LinearLayout>
 
@@ -202,36 +161,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:background="#657AFF"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/circle_shape"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_show_chart_black_24dp"
-                        android:backgroundTint="@color/deeppurple"/>
+                        android:layout_width="98dp"
+                        android:layout_height="91dp"
+                        android:src="@drawable/Personal"
+                        android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
+                        android:padding="0dp"
+                        tools:targetApi="lollipop" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Relatorios"
+                        android:text="Personal"
                         android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="@color/lightgray" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="Visualizar"
-                        android:textColor="@android:color/darker_gray" />
 
                 </LinearLayout>
 
