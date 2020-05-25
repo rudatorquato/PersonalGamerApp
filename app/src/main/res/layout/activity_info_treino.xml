@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UsuariosActivity"
+    android:orientation="vertical"
+    android:background="#657AFF">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="711dp"
+        android:layout_margin="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="5dp"
+        app:elevation="@dimen/cardview_default_elevation"
+        tools:ignore="PrivateResource">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Linha 1 com 1 coluna1 -->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:elevation="@dimen/cardview_default_elevation"
+                tools:ignore="PrivateResource">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- Linha 2 com 2 colunas -->
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:background="#ECECEC"
+                            android:padding="5dip"
+                            android:text="Nome:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_cpf"
+                            android:layout_weight="1"
+                            android:background="#ECECEC"
+                            android:padding="5dip"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <!-- Linha 3 com 2 colunas -->
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:padding="5dip"
+                            android:text="Série:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_credencial"
+                            android:layout_weight="1"
+                            android:padding="5dip"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <!-- Linha 4 com 2 colunas -->
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:background="#ECECEC"
+                            android:padding="5dip"
+                            android:text="Repetiçoes:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_funcao"
+                            android:layout_weight="1"
+                            android:background="#ECECEC"
+                            android:padding="5dip"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:padding="5dip"
+                            android:text="Carga:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_credencial"
+                            android:layout_weight="1"
+                            android:padding="5dip"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:background="#ECECEC"
+                            android:padding="5dip"
+                            android:text="Observação:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_funcao"
+                            android:layout_weight="1"
+                            android:background="#ECECEC"
+                            android:padding="5dip"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
