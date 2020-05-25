@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:background="#657AFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:background="#FFFFFF"
+            android:id="@+id/content_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <!-- Login progress -->
+            <ProgressBar
+                android:id="@+id/login_progress"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Linha 2 com 2 colunas -->
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:background="#ECECEC"
+                        android:padding="5dip"
+                        android:text="Data:"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_cpf"
+                        android:layout_weight="1"
+                        android:background="#ECECEC"
+                        android:padding="5dip"
+                        android:textSize="14sp" />
+
+                </TableRow>
+
+                <!-- Linha 3 com 2 colunas -->
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:padding="5dip"
+                        android:text="Horario:"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_credencial"
+                        android:layout_weight="1"
+                        android:padding="5dip"
+                        android:textSize="14sp" />
+
+                </TableRow>
+
+                <!-- Linha 4 com 2 colunas -->
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:background="#ECECEC"
+                        android:padding="5dip"
+                        android:text="Treino:"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_funcao"
+                        android:layout_weight="1"
+                        android:background="#ECECEC"
+                        android:padding="5dip"
+                        android:textSize="14sp" />
+
+                </TableRow>
+
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/rounded_border"
+                android:text="Iniciar"
+                android:textColor="#DCDCDC"
+                android:textStyle="bold"
+                android:onClick="salvar"
+                style="?android:textAppearanceSmall"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
