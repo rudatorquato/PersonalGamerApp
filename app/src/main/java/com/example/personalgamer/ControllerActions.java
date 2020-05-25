@@ -1,4 +1,4 @@
-package com.example.appshow;
+package com.example.personalgamer;
 
 public abstract class ControllerActions {
 
@@ -6,3 +6,4 @@ public abstract class ControllerActions {
     public void onLeftSwiped(int position) {}
     public void onHourSet(int position, String data) {}
 }
+
