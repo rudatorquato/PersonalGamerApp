@@ -47,7 +47,8 @@ public class UsersController {
                 jsonObject.getString("Email"),
                 jsonObject.getString("Telephone"),
                 jsonObject.getString("Info"),
-                jsonObject.getString("TypeUser")
+                jsonObject.getString("TypeUser"),
+                jsonObject.getString("Username")
         );
     }
 }

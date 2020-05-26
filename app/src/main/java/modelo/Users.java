@@ -4,17 +4,18 @@ import java.util.ArrayList;
 
 public class Users {
     private int id;
-    private String Name,Email,Telephone,Info,TypeUser;
+    private String Name,Email,Telephone,Info,TypeUser, Username;
     private ArrayList<Traning> Traning;
     private ArrayList<Measures> Measures;
 
-    public Users(int id, String Name, String Email, String Telephone, String Info, String TypeUser){
+    public Users(int id, String Name, String Email, String Telephone, String Info, String TypeUser, String Username){
         this.id = id;
         this.Name = Name;
         this.Email = Email;
         this.Telephone = Telephone;
         this.Info = Info;
         this.TypeUser = TypeUser;
+        this.Username = Username;
         this.Traning = new ArrayList<>();
         this.Measures = new ArrayList<>();
     }
@@ -66,6 +67,15 @@ public class Users {
     public void setTypeUser(String TypeUser) {
         this.TypeUser = TypeUser;
     }
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String Username) {
+        this.Username = Username;
+    }
+
 
     public void setTraning(Traning Traning) {
         this.Traning.add(Traning);

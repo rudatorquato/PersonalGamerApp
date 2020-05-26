@@ -44,6 +44,7 @@ public class TraningController {
     private static Traning converteTraning(JSONObject jsonObject) throws JSONException {
 
         return new Traning(
+                jsonObject.getString("Images"),
                 jsonObject.getString("NameTraning"),
                 jsonObject.getString("Place"),
                 jsonObject.getString("Exercise"),

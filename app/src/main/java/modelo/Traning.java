@@ -1,10 +1,11 @@
 package modelo;
 
 public class Traning{
-    String NameTraning, Place, Exercise;
+    String NameTraning, Place, Exercise, Images;
     int Sequence, Series,Repetition, Charge;
 
-    public Traning(String NameTraning, String Place, String Exercise, int Sequence, int Series, int Repetition, int Charge){
+    public Traning(String Images, String NameTraning, String Place, String Exercise, int Sequence, int Series, int Repetition, int Charge){
+        this.Images = Images;
         this.NameTraning = NameTraning;
         this.Place = Place;
         this.Exercise = Exercise;
@@ -14,12 +15,20 @@ public class Traning{
         this.Charge = Charge;
     }
 
-    public String getNameTraning(){
-        return NameTraning;
+    public String getImages(){
+        return Images;
     }
 
     public void setNameTraning(String NameTraning) {
         this.NameTraning = NameTraning;
+    }
+
+    public String getNameTraning(){
+        return NameTraning;
+    }
+
+    public void setImages(String Images) {
+        this.Images = Images;
     }
 
     public String getPlace(){
