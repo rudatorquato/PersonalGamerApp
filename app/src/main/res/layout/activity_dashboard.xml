@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -23,7 +24,7 @@
             <androidx.cardview.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:id="@+id/card_usuario"
+                android:id="@+id/crd_perfil"
                 android:layout_width="150dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
@@ -61,7 +62,7 @@
             <androidx.cardview.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:id="@+id/card_prescricao"
+                android:id="@+id/crd_qrcode"
                 android:layout_width="150dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
@@ -109,7 +110,7 @@
             <androidx.cardview.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:id="@+id/card_paciente"
+                android:id="@+id/crd_treino"
                 android:layout_width="150dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
@@ -147,7 +148,7 @@
             <androidx.cardview.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:id="@+id/card_relatorio"
+                android:id="@+id/crd_personal"
                 android:layout_width="150dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"

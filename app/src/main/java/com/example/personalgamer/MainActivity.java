@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClicked, On
 
         startActivity(new Intent(context, DashboardActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
-        finish();
+//        finish();
 
 //        preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
 //

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".QrCodeActivity"
+    android:orientation="vertical"
+    android:background="#657AFF">
+
+    <TextView
+        android:id="@+id/tv_cpf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ECECEC"
+        android:text="dasldjals"
+        android:padding="5dip"
+        android:textSize="14sp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
