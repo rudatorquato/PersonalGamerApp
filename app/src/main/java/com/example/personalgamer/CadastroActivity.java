@@ -8,17 +8,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class CadastroActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context = this;
     private Button sign_in_button, sign_up_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_cadastro);
 
         loadViews();
-
     }
 
     public void loadViews(){
@@ -32,12 +31,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_button:
-                startActivity(new Intent(context, DashboardActivity.class)
+                startActivity(new Intent(context, LoginActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 finish();
                 break;
             case R.id.sign_up_button:
-                startActivity(new Intent(context, CadastroActivity.class)
+                startActivity(new Intent(context, DashboardActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 finish();
                 break;

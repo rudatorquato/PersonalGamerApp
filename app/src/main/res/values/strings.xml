@@ -1,10 +1,22 @@
 <resources>
     <string name="app_name">PersonalGamer</string>
 
+    <string name="action_settings">Settings</string>
+    <string name="action_cadastro">Cadastro</string>
+    <string name="action_logout">Sair</string>
+
+    <!--Login / Cadastro-->
     <string name="prompt_credential">Usuário</string>
     <string name="prompt_password">Senha</string>
     <string name="action_sign_in">Entrar</string>
+    <string name="action_sign_up">Cadastrar</string>
     <string name="action_sign_in_short">Entrar</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="existe">EXISTE</string>
+    <string name="novo">NOVO</string>
+
+    <!--Erro-->
     <string name="error_invalid_cpf">CPF não válido</string>
     <string name="error_invalid_email">Credencial inválida</string>
     <string name="error_invalid_password">Senha curta</string>
