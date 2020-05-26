@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         startActivity(new Intent(context, LoginActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        finish();
     }
 
     public void loadViews() {
