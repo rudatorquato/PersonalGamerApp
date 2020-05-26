@@ -19,8 +19,20 @@
     <string name="aluno">Aluno</string>
     <string name="personal">Personal</string>
 
-    <!--Login / Cadastro-->
+    <!--Cadastro-->
     <string name="action_measures">Cadastro de Medidas</string>
+
+    <string name="action_name_traning">Nome do exercicio</string>
+
+    <!--Cadastro Traning-->
+    <string name="action_Images">Imagem</string>
+    <string name="action_NameTraning">Nome do Exercicio</string>
+    <string name="action_Sequence">Sequencia</string>
+    <string name="action_Place">Local</string>
+    <string name="action_Exercise">Exercício</string>
+    <string name="action_Series">Serie</string>
+    <string name="action_Repetition">Repetição</string>
+    <string name="action_Charge">Carga</string>
 
     <!--Cadastro Measures-->
     <string name="action_Weight">Peso</string>
