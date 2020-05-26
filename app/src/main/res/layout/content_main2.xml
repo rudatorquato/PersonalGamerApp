@@ -43,9 +43,9 @@
                     <ImageView
                         android:layout_width="98dp"
                         android:layout_height="91dp"
-                        android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
+                        android:backgroundTint="@color/cardview_light_background"
                         android:padding="0dp"
-                        android:src="@drawable/teste"
+                        android:src="@drawable/personal"
                         tools:targetApi="lollipop" />
 
                     <TextView
@@ -81,9 +81,9 @@
                     <ImageView
                         android:layout_width="98dp"
                         android:layout_height="91dp"
-                        android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
+                        android:backgroundTint="@color/cardview_light_background"
                         android:padding="0dp"
-                        android:src="@drawable/QRCode"
+                        android:src="@drawable/qrcode"
                         tools:targetApi="lollipop" />
 
                     <TextView
@@ -129,8 +129,8 @@
                     <ImageView
                         android:layout_width="98dp"
                         android:layout_height="91dp"
-                        android:src="@drawable/Treino"
-                        android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
+                        android:src="@drawable/treino"
+                        android:backgroundTint="@color/cardview_light_background"
                         android:padding="0dp"
                         tools:targetApi="lollipop" />
 
@@ -167,8 +167,8 @@
                     <ImageView
                         android:layout_width="98dp"
                         android:layout_height="91dp"
-                        android:src="@drawable/Personal"
-                        android:backgroundTint="@color/common_google_signin_btn_text_dark_pressed"
+                        android:src="@drawable/personal"
+                        android:backgroundTint="@color/cardview_light_background"
                         android:padding="0dp"
                         tools:targetApi="lollipop" />
 
