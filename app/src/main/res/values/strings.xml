@@ -13,6 +13,7 @@
     <string name="action_sign_in_short">Entrar</string>
     <string name="nome">Nome</string>
     <string name="email">Email</string>
+    <string name="phone">Tel.</string>
     <string name="existe">EXISTE</string>
     <string name="novo">NOVO</string>
 
