@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PersonalGamer</string>
 
-    <string name="prompt_credential">CPF</string>
+    <string name="prompt_credential">Usuário</string>
     <string name="prompt_password">Senha</string>
     <string name="action_sign_in">Entrar</string>
     <string name="action_sign_in_short">Entrar</string>

@@ -46,7 +46,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <!-- Linha 2 com 2 colunas -->
+                    <!-- Linha 1 com 2 colunas -->
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
 
                     </TableRow>
 
-                    <!-- Linha 3 com 2 colunas -->
+                    <!-- Linha 2 com 2 colunas -->
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
 
                     </TableRow>
 
-                    <!-- Linha 4 com 2 colunas -->
+                    <!-- Linha 3 com 2 colunas -->
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                         <TextView
                             android:layout_weight="1"
                             android:padding="10dip"
-                            android:text="Repetiçoes:"
+                            android:text="Repetições:"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -109,6 +109,7 @@
 
                     </TableRow>
 
+                    <!-- Linha 4 com 2 colunas -->
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
