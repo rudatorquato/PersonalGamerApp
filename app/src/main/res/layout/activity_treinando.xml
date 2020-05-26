@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_qr_code"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity">
+    tools:context=".TreinandoActivity"
+    android:background="#657AFF"
+
+    android:orientation="vertical"
+    >
 
     <ScrollView
         android:background="#657AFF"
@@ -112,14 +118,32 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/rounded_border"
-                android:text="Iniciar"
+                android:text="Scanear"
                 android:textColor="#DCDCDC"
                 android:textStyle="bold"
-                android:onClick="salvar"
-                style="?android:textAppearanceSmall"/>
+
+                style="?android:textAppearanceSmall"
+                android:id="@+id/scan"/>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/resultado"
+                    android:layout_weight="1"
+                    android:background="#ECECEC"
+                    android:padding="5dip"
+                    android:text="Resultado:"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+            </TableRow>
 
         </LinearLayout>
 
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
