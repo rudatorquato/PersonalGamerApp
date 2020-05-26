@@ -1,6 +1,7 @@
 package com.example.personalgamer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
@@ -16,9 +17,10 @@ import util.Mask;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context = this;
-    private Button sign_in_button, sign_up_button, sign_in_switch, sign_up_switch;
-    private View v_user, v_email, v_phone, v_user_type;
+    private Button sign_in_button, sign_in_switch, sign_up_switch, aluno_switch, personal_switch;
+    private View v_user, v_email, v_phone;
     private EditText edt_phone;
+    private CardView crd_switch_type;
     private boolean change;
 
     @Override
@@ -34,19 +36,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         v_user = findViewById(R.id.v_user);
         v_email = findViewById(R.id.v_email);
         v_phone = findViewById(R.id.v_phone);
-        v_user_type = findViewById(R.id.v_user_type);
+
+        crd_switch_type = findViewById(R.id.crd_switch_type);
 
         edt_phone = findViewById(R.id.edt_phone);
         edt_phone.addTextChangedListener(Mask.insert(edt_phone, "CPFMask"));
 
         sign_in_button = findViewById(R.id.sign_in_button);
         sign_in_button.setOnClickListener(this);
-//        sign_up_button = findViewById(R.id.sign_up_button);
-//        sign_up_button.setOnClickListener(this);
         sign_in_switch = findViewById(R.id.sign_in_switch);
         sign_in_switch.setOnClickListener(this);
         sign_up_switch = findViewById(R.id.sign_up_switch);
         sign_up_switch.setOnClickListener(this);
+
+        aluno_switch = findViewById(R.id.aluno_switch);
+        aluno_switch.setOnClickListener(this);
+        personal_switch = findViewById(R.id.personal_switch);
+        personal_switch.setOnClickListener(this);
     }
 
     @Override
@@ -63,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 v_email.setVisibility(View.GONE);
                 v_phone.setVisibility(View.GONE);
-                v_user_type.setVisibility(View.GONE);
+                crd_switch_type.setVisibility(View.GONE);
 
                 sign_in_button.setText("Entrar");
                 break;
@@ -75,11 +81,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 sign_up_switch.setClickable(false);
                 sign_up_switch.setTextColor(Color.parseColor("#808080"));
                 sign_up_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_white));
-                sign_in_button.setText("Cadastrar");
 
                 v_email.setVisibility(View.VISIBLE);
                 v_phone.setVisibility(View.VISIBLE);
-                v_user_type.setVisibility(View.VISIBLE);
+                crd_switch_type.setVisibility(View.VISIBLE);
+
+                sign_in_button.setText("Cadastrar");
+                break;
+            case R.id.aluno_switch:
+                personal_switch.setClickable(true);
+                personal_switch.setTextColor(Color.parseColor("#DCDCDC"));
+                personal_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_border));
+
+                aluno_switch.setClickable(false);
+                aluno_switch.setTextColor(Color.parseColor("#808080"));
+                aluno_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_white));
+                break;
+            case R.id.personal_switch:
+                aluno_switch.setClickable(true);
+                aluno_switch.setTextColor(Color.parseColor("#DCDCDC"));
+                aluno_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_border));
+
+                personal_switch.setClickable(false);
+                personal_switch.setTextColor(Color.parseColor("#808080"));
+                personal_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_white));
                 break;
             case R.id.sign_in_button:
                 startActivity(new Intent(context, DashboardActivity.class)

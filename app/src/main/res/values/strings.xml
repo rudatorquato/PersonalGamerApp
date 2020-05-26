@@ -16,6 +16,8 @@
     <string name="phone">Tel.</string>
     <string name="existe">EXISTE</string>
     <string name="novo">NOVO</string>
+    <string name="aluno">Aluno</string>
+    <string name="personal">Personal</string>
 
     <!--Erro-->
     <string name="error_invalid_cpf">CPF não válido</string>
