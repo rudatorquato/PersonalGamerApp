@@ -209,7 +209,7 @@
                         <TextView
                             android:layout_weight="1"
                             android:padding="10dip"
-                            android:text="Peso(Weight):"
+                            android:text="Peso:"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -230,7 +230,7 @@
                         <TextView
                             android:layout_weight="1"
                             android:padding="10dip"
-                            android:text="Altura(stature):"
+                            android:text="Altura:"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -378,7 +378,7 @@
                         <TextView
                             android:layout_weight="1"
                             android:padding="10dip"
-                            android:text="Braço contratado:"
+                            android:text="Braço contraido:"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
