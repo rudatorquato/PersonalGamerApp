@@ -18,31 +18,17 @@
 
         <ImageView
             android:id="@+id/img_gif"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:layout_marginBottom="30dp"
-            android:src="@drawable/perfil" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardCornerRadius="10dp"
-        app:elevation="@dimen/cardview_default_elevation"
-        tools:ignore="PrivateResource">
+            android:src="@drawable/treino" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="30dp"
             android:orientation="vertical">
-
-            <!-- Linha 1 com 1 coluna1 -->
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_user"
@@ -51,6 +37,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
                 app:elevation="@dimen/cardview_default_elevation"
                 tools:ignore="PrivateResource">
 
@@ -67,18 +54,16 @@
 
                         <TextView
                             android:layout_weight="1"
-                            android:background="#ECECEC"
-                            android:padding="5dip"
+                            android:padding="10dip"
                             android:text="Nome:"
-                            android:textSize="14sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_nome"
                             android:layout_weight="1"
-                            android:background="#ECECEC"
-                            android:padding="5dip"
-                            android:textSize="14sp" />
+                            android:padding="10dip"
+                            android:textSize="20sp" />
 
                     </TableRow>
 
@@ -90,16 +75,16 @@
 
                         <TextView
                             android:layout_weight="1"
-                            android:padding="5dip"
+                            android:padding="10dip"
                             android:text="Série:"
-                            android:textSize="14sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_serie"
                             android:layout_weight="1"
-                            android:padding="5dip"
-                            android:textSize="14sp" />
+                            android:padding="10dip"
+                            android:textSize="20sp" />
 
                     </TableRow>
 
@@ -111,18 +96,16 @@
 
                         <TextView
                             android:layout_weight="1"
-                            android:background="#ECECEC"
-                            android:padding="5dip"
+                            android:padding="10dip"
                             android:text="Repetiçoes:"
-                            android:textSize="14sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_repeticoes"
                             android:layout_weight="1"
-                            android:background="#ECECEC"
-                            android:padding="5dip"
-                            android:textSize="14sp" />
+                            android:padding="10dip"
+                            android:textSize="20sp" />
 
                     </TableRow>
 
@@ -133,16 +116,16 @@
 
                         <TextView
                             android:layout_weight="1"
-                            android:padding="5dip"
+                            android:padding="10dip"
                             android:text="Carga:"
-                            android:textSize="14sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_carga"
                             android:layout_weight="1"
-                            android:padding="5dip"
-                            android:textSize="14sp" />
+                            android:padding="10dip"
+                            android:textSize="20sp" />
 
                     </TableRow>
 
@@ -153,18 +136,16 @@
 
                         <TextView
                             android:layout_weight="1"
-                            android:background="#ECECEC"
-                            android:padding="5dip"
+                            android:padding="10dip"
                             android:text="Observação:"
-                            android:textSize="14sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_observacao"
                             android:layout_weight="1"
-                            android:background="#ECECEC"
-                            android:padding="5dip"
-                            android:textSize="14sp" />
+                            android:padding="10dip"
+                            android:textSize="20sp" />
 
                     </TableRow>
 
@@ -173,9 +154,6 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-
     </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
