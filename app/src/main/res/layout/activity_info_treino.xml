@@ -130,6 +130,7 @@
 
                     </TableRow>
 
+                    <!-- Linha 5 com 2 colunas -->
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -150,6 +151,7 @@
 
                     </TableRow>
 
+                    <!-- Linha 6 com 2 colunas -->
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -170,6 +172,7 @@
 
                     </TableRow>
 
+                    <!-- Linha 7 com 2 colunas -->
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -190,6 +193,7 @@
 
                     </TableRow>
 
+                    <!-- Linha 8 com 2 colunas -->
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"

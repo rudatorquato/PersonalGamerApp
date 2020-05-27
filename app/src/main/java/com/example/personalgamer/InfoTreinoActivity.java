@@ -64,7 +64,7 @@ public class InfoTreinoActivity extends AppCompatActivity implements View.OnClic
     }
 
     public void setTraining() {
-        showGif();
+        showGif(training.getImage());
         tv_training.setText(training.getTraining());
         tv_sequence.setText(String.valueOf(training.getSequence()));
         tv_place.setText(training.getPlace());
@@ -81,7 +81,7 @@ public class InfoTreinoActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    public void showGif() {
-        Glide.with(context).load(R.drawable.gif_01).into(img_gif);
+    public void showGif(String gif) {
+        Glide.with(context).load(context.getResources().getIdentifier(gif, "drawable", context.getPackageName())).into(img_gif);
     }
 }
