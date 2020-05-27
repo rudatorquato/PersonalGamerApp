@@ -51,7 +51,7 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal">
+                        android:gravity="center_horizontal"/>
 
 
                     <!-- Linha 3 com 2 colunas -->
@@ -149,7 +149,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_observacao"
+                            android:id="@+id/tv_ovacao"
                             android:layout_weight="1"
                             android:padding="10dip"
                             android:textSize="20sp" />
