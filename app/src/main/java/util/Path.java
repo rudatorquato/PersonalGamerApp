@@ -7,10 +7,10 @@ public class Path {
     public static String urCadastroUsuarios = ip + "personalgamer/users";
 
     //Listagem de Usuários
-    public static String urUsuarios = ip + "personalgamer/users";
+    public static String urlUsuarios = ip + "personalgamer/users";
 
     //Get Usuario
-    public static String urUsuario = ip + "personalgamer/users";
+    public static String urlGetUsuario = ip + "personalgamer/users";
 
     //Update Measures/id
     public static String urlUpdateMeasures = ip + "personalgamer/users/measures/";
