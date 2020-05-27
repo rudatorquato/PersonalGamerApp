@@ -1,58 +1,28 @@
 package controller;
 
-import android.util.Log;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import modelo.Traning;
+import modelo.Training;
 
 public class TraningController {
 
-    private static List<Traning> traning;
+    public static Training getTraning(String response) throws JSONException {
+        JSONObject object = new JSONObject(response);
 
-    public static List<Traning> getTraning(String response ) throws JSONException{
-        Log.d("RESULT USERS", response);
-
-        traning = new ArrayList<>();
-
-        JSONArray array = new JSONArray(response);
-
-        Traning traningDif;
-
-        for(int i = 0 ; i < array.length() ; i++) {
-            JSONObject object = array.getJSONObject(i);
-            traningDif = converteTraning(object);
-            traning.add(traningDif);
-        }
-        return traning;
+        return converteQrCode(object);
     }
 
-    public static Traning getTraningEsp(String response) throws JSONException {
-        JSONArray array = new JSONArray(response);
-        Traning traning;
-        JSONObject object = array.getJSONObject(0);
-        traning = converteTraning(object);
+    private static Training converteQrCode(JSONObject jsonObject) throws JSONException {
 
-        return traning;
-    }
-
-    private static Traning converteTraning(JSONObject jsonObject) throws JSONException {
-
-        return new Traning(
-                jsonObject.getString("Images"),
-                jsonObject.getString("NameTraning"),
-                jsonObject.getString("Place"),
-                jsonObject.getString("Exercise"),
-                jsonObject.getInt("Sequence"),
-                jsonObject.getInt("Series"),
-                jsonObject.getInt("Repetition"),
-                jsonObject.getInt("Charge")
-
-        );
+        return new Training(
+                jsonObject.getString("image"),
+                jsonObject.getString("training"),
+                jsonObject.getString("place"),
+                jsonObject.getString("exercise"),
+                jsonObject.getInt("sequence"),
+                jsonObject.getInt("series"),
+                jsonObject.getInt("repetitions"),
+                jsonObject.getInt("charge"));
     }
 }

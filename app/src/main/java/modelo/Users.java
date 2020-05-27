@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Users {
     private int id;
     private String Name,Email,Telephone,Info,TypeUser, Username;
-    private ArrayList<Traning> Traning;
+    private ArrayList<Training> Training;
     private ArrayList<Measures> Measures;
 
     public Users(int id, String Name, String Email, String Telephone, String Info, String TypeUser, String Username){
@@ -16,7 +16,7 @@ public class Users {
         this.Info = Info;
         this.TypeUser = TypeUser;
         this.Username = Username;
-        this.Traning = new ArrayList<>();
+        this.Training = new ArrayList<>();
         this.Measures = new ArrayList<>();
     }
 
@@ -77,16 +77,16 @@ public class Users {
     }
 
 
-    public void setTraning(Traning Traning) {
-        this.Traning.add(Traning);
+    public void setTraining(Training Training) {
+        this.Training.add(Training);
     }
 
-    public ArrayList<Traning> getTraning() {
-        return Traning;
+    public ArrayList<Training> getTraining() {
+        return Training;
     }
 
-    public void setTraning(ArrayList<Traning> Traning) {
-        this.Traning = Traning;
+    public void setTraning(ArrayList<Training> Training) {
+        this.Training = Training;
     }
 
     public void setMeasures(Measures Measures) {
