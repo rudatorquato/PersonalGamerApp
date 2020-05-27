@@ -9,11 +9,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import interfaces.NetworkObserver;
+import network.NetworkManager;
 import util.Mask;
+import util.Path;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context = this;
@@ -23,6 +27,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private CardView crd_switch_type;
     private boolean change;
 
+    private NetworkManager manager;
+    private NetworkObserver networkObserver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +37,31 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         loadViews();
 
+        manager = new NetworkManager();
+        manager.setNetworkObserver(getLoginObserver());
+        manager.get(Path.urlCadastroUsuarios);
+    }
+
+    private NetworkObserver getLoginObserver() {
+        if (networkObserver == null){
+            networkObserver = new NetworkObserver() {
+                @Override
+                public void doOnPost(String response) {
+
+                }
+
+                @Override
+                public void doOnGet(String response) {
+                    Log.d("RESPONSE", response);
+                }
+
+                @Override
+                public void doOnError(String response) {
+                    Log.d("ERRO", response);
+                }
+            };
+        }
+        return networkObserver;
     }
 
     private void loadViews(){
