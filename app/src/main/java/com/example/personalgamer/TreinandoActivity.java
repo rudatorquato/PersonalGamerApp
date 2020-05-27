@@ -20,9 +20,6 @@ public class TreinandoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code);
 
-        resultado = (TextView)findViewById(R.id.resultado);
-        scan = (Button) findViewById(R.id.scan);
-
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

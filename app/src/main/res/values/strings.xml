@@ -24,6 +24,9 @@
 
     <string name="action_name_traning">Nome do exercicio</string>
 
+    <!--Treino-->
+    <string name="comecar">Começar</string>
+
     <!--Cadastro Traning-->
     <string name="action_Images">Imagem</string>
     <string name="action_NameTraning">Nome do Exercicio</string>

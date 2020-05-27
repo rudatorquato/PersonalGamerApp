@@ -9,141 +9,148 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".TreinandoActivity"
     android:background="#657AFF"
+    android:orientation="vertical">
 
-    android:orientation="vertical"
-    >
-
-    <ScrollView
-        android:background="#657AFF"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#657AFF"
+        android:gravity="center">
 
-        <LinearLayout
-            android:background="#FFFFFF"
-            android:id="@+id/content_main"
+        <ImageView
+            android:id="@+id/img_gif"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:backgroundTint="@color/cardview_dark_background"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/qrcode"
+            tools:ignore="ContentDescription" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:gravity="center"
+            android:text="QR-Code"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
             android:orientation="vertical">
 
-            <!-- Login progress -->
-            <ProgressBar
-                android:id="@+id/login_progress"
-                style="?android:attr/progressBarStyleLarge"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_treino"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <!-- Linha 2 com 2 colunas -->
-                <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal">
-
-                    <TextView
-                        android:layout_weight="1"
-                        android:background="#ECECEC"
-                        android:padding="5dip"
-                        android:text="Data:"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tv_cpf"
-                        android:layout_weight="1"
-                        android:background="#ECECEC"
-                        android:padding="5dip"
-                        android:textSize="14sp" />
-
-                </TableRow>
-
-                <!-- Linha 3 com 2 colunas -->
-                <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal">
-
-                    <TextView
-                        android:layout_weight="1"
-                        android:padding="5dip"
-                        android:text="Horario:"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tv_credencial"
-                        android:layout_weight="1"
-                        android:padding="5dip"
-                        android:textSize="14sp" />
-
-                </TableRow>
-
-                <!-- Linha 4 com 2 colunas -->
-                <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal">
-
-                    <TextView
-                        android:layout_weight="1"
-                        android:background="#ECECEC"
-                        android:padding="5dip"
-                        android:text="Treino:"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tv_funcao"
-                        android:layout_weight="1"
-                        android:background="#ECECEC"
-                        android:padding="5dip"
-                        android:textSize="14sp" />
-
-                </TableRow>
-
-
-
-            </LinearLayout>
-
-            <Button
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/rounded_border"
-                android:text="Scanear"
-                android:textColor="#DCDCDC"
-                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
+                app:elevation="@dimen/cardview_default_elevation"
+                tools:ignore="PrivateResource">
 
-                style="?android:textAppearanceSmall"
-                android:id="@+id/scan"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
+                    <!-- Linha 1 com 2 colunas -->
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
 
-                <TextView
-                    android:id="@+id/resultado"
-                    android:layout_weight="1"
-                    android:background="#ECECEC"
-                    android:padding="5dip"
-                    android:text="Resultado:"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:padding="10dp"
+                            android:backgroundTint="@color/cardview_dark_background"
+                            android:layout_marginBottom="20dp"
+                            android:src="@drawable/calendar"
+                            tools:ignore="ContentDescription" />
 
+                        <TextView
+                            android:id="@+id/tv_data"
+                            android:layout_weight="1"
+                            android:padding="10dip"
+                            android:text="05/05/2020"
+                            android:textStyle="bold"
+                            android:textSize="30sp" />
 
-            </TableRow>
+                    </TableRow>
 
+                    <!-- Linha 2 com 2 colunas -->
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:padding="10dp"
+                            android:backgroundTint="@color/cardview_dark_background"
+                            android:layout_marginBottom="20dp"
+                            android:src="@drawable/clock"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/tv_hora"
+                            android:layout_weight="1"
+                            android:padding="10dip"
+                            android:text="14:46"
+                            android:textStyle="bold"
+                            android:textSize="30sp" />
+
+                    </TableRow>
+
+                    <!-- Linha 3 com 2 colunas -->
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:padding="10dp"
+                            android:backgroundTint="@color/cardview_dark_background"
+                            android:layout_marginBottom="20dp"
+                            android:src="@drawable/gym"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/tv_treino"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="TREINO"
+                            android:textStyle="bold"
+                            android:textSize="30sp" />
+
+                    </TableRow>
+
+                    <Button
+                        android:id="@+id/btn_comecar"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_border"
+                        android:textColor="#DCDCDC"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/comecar"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:focusable="true"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
-
-    </ScrollView>
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
