@@ -11,6 +11,7 @@
     <string name="action_sign_in">Entrar</string>
     <string name="action_sign_up">Cadastrar</string>
     <string name="action_sign_in_short">Entrar</string>
+
     <string name="nome">Nome</string>
     <string name="email">Email</string>
     <string name="phone">Tel.</string>
@@ -20,41 +21,41 @@
     <string name="personal">Personal</string>
 
     <!--Cadastro-->
-    <string name="action_measures">Medidas</string>
+    <string name="measures">Medidas</string>
 
-    <string name="action_name_traning">Nome do exercicio</string>
+    <string name="traning">Nome do exercicio</string>
 
     <!--Treino-->
     <string name="comecar">Começar</string>
 
     <!--Cadastro Traning-->
-    <string name="action_Images">Imagem</string>
-    <string name="action_NameTraning">Nome do Exercicio</string>
-    <string name="action_Sequence">Sequencia</string>
-    <string name="action_Place">Local</string>
-    <string name="action_Exercise">Exercício</string>
-    <string name="action_Series">Serie</string>
-    <string name="action_Repetition">Repetição</string>
-    <string name="action_Charge">Carga</string>
+    <string name="image">Imagem</string>
+    <string name="nameTraning">Nome do Exercicio</string>
+    <string name="sequence">Sequência</string>
+    <string name="place">Local</string>
+    <string name="exercise">Exercício</string>
+    <string name="series">Serie</string>
+    <string name="repetition">Repetição</string>
+    <string name="charge">Carga</string>
 
     <!--Cadastro Measures-->
-    <string name="action_Weight">Peso</string>
-    <string name="action_Stature">Altura</string>
-    <string name="action_Shoulder">Ombro</string>
-    <string name="action_InspiredChest">Torax Inspirado</string>
-    <string name="action_RightRelaxedArm">Braço Direito Relaxado</string>
-    <string name="action_LeftRelaxedArm">Braço Esquedo Relaxado</string>
-    <string name="action_RightThigh">Coxa Direita</string>
-    <string name="action_LeftThigh">Coxa Esquerda</string>
-    <string name="action_RightForearm">Antebraço Direita</string>
-    <string name="action_LeftForearm">Antebraço Esquerdo</string>
-    <string name="action_RightContractedArm">Braço Contraido Direito</string>
-    <string name="action_LeftContractedArm">Braço Contraido Esquerdo</string>
-    <string name="action_Waist">Cintura</string>
-    <string name="action_Abdomen">Abdomen</string>
-    <string name="action_Hip">Quadril</string>
-    <string name="action_LeftLeg">Perna Esquerdo</string>
-    <string name="action_RightLeg">Perna Direitos</string>
+    <string name="weight">Peso</string>
+    <string name="stature">Altura</string>
+    <string name="shoulder">Ombro</string>
+    <string name="inspiredChest">Torax Inspirado</string>
+    <string name="rightRelaxedArm">Braço Direito Relaxado</string>
+    <string name="leftRelaxedArm">Braço Esquedo Relaxado</string>
+    <string name="rightThigh">Coxa Direita</string>
+    <string name="leftThigh">Coxa Esquerda</string>
+    <string name="rightForearm">Antebraço Direito</string>
+    <string name="leftForearm">Antebraço Esquerdo</string>
+    <string name="rightContractedArm">Braço Contraído Direito</string>
+    <string name="leftContractedArm">Braço Contraído Esquerdo</string>
+    <string name="waist">Cintura</string>
+    <string name="abdomen">Abdômen</string>
+    <string name="hip">Quadril</string>
+    <string name="leftLeg">Perna Esquerdo</string>
+    <string name="rightLeg">Perna Direita</string>
 
     <!--Erro-->
     <string name="error_invalid_cpf">CPF não válido</string>

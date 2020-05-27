@@ -61,7 +61,7 @@
                         android:background="@drawable/rounded_border"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="@string/action_name_traning"
+                        android:text="@string/traning"
                         android:textColor="#DCDCDC"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -75,7 +75,7 @@
                         android:background="@drawable/rounded_border"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="@string/action_name_traning"
+                        android:text="@string/traning"
                         android:textColor="#DCDCDC"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -89,7 +89,7 @@
                         android:background="@drawable/rounded_border"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="@string/action_name_traning"
+                        android:text="@string/traning"
                         android:textColor="#DCDCDC"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -103,7 +103,7 @@
                         android:background="@drawable/rounded_border"
                         android:clickable="true"
                         android:focusable="true"
-                        android:text="@string/action_name_traning"
+                        android:text="@string/traning"
                         android:textColor="#DCDCDC"
                         android:textSize="20sp"
                         android:textStyle="bold" />

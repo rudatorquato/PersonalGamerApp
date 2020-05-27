@@ -20,7 +20,7 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
         loadViews();
     }
 
-    public void loadViews(){
+    private void loadViews(){
         sign_in_button = findViewById(R.id.sign_in_button);
         sign_in_button.setOnClickListener(this);
         sign_up_button = findViewById(R.id.sign_up_button);

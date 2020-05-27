@@ -49,7 +49,7 @@ public class InfoTreinoActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    public void loadViews() {
+    private void loadViews() {
         img_gif = findViewById(R.id.img_gif);
 
         tv_training = findViewById(R.id.tv_training);

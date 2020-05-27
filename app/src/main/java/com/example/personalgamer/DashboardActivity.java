@@ -22,7 +22,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         loadViews();
     }
 
-    public void loadViews() {
+    private void loadViews() {
         crd_perfil = findViewById(R.id.crd_perfil);
         crd_perfil.setOnClickListener(this);
         crd_qrcode = findViewById(R.id.crd_qrcode);
@@ -51,7 +51,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 break;
             case R.id.crd_personal:
-                startActivity(new Intent(context, InfoTreinoActivity.class)
+                startActivity(new Intent(context, PersonalActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 break;
             default:

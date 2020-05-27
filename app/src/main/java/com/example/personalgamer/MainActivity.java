@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         finish();
     }
 
-    public void loadViews() {
+    private void loadViews() {
 
     }
 

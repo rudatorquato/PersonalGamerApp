@@ -39,7 +39,7 @@
                 android:textColor="#DCDCDC"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:text="@string/action_measures"
+                android:text="@string/measures"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:clickable="true"

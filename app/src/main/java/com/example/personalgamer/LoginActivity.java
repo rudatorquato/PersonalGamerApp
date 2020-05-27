@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    public void loadViews(){
+    private void loadViews(){
         v_user = findViewById(R.id.v_user);
         v_email = findViewById(R.id.v_email);
         v_phone = findViewById(R.id.v_phone);
