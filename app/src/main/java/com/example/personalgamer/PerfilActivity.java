@@ -35,6 +35,7 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
         loadViews();
         manager = new NetworkManager();
         manager.setNetworkObserver(getUserObserver());
+        manager.get(Path.urlGetUsuario);
     }
 
     private void loadViews() {
@@ -57,8 +58,7 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
 
                 @Override
                 public void doOnError(String response) {
-                    Log.d("RESPONSE", response);
-
+                    Log.d("ERRO", response);
                 }
             };
         }

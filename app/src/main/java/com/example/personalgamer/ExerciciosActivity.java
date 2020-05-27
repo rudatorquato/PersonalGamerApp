@@ -31,9 +31,9 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
         loadViews();
 
         ArrayList<Training> trainings = new ArrayList<>();
-        trainings.add(new Training("dasd", "dasda","dasdas","dasda",0303, 9494,49949,4004));
-        trainings.add(new Training("dasd", "dasda","dasdas","dasda",0303, 9494,49949,4004));
-        trainings.add(new Training("dasd", "dasda","dasdas","dasda",0303, 9494,49949,4004));
+        trainings.add(new Training("Img 01", "Training 01","Place 01","Exerc 01",10, 11,12,13));
+        trainings.add(new Training("Img 02", "Training 02","Place 02","Exerc 02",20, 21,22,23));
+        trainings.add(new Training("Img 03", "Training 03","Place 03","Exerc 03",30, 31,32,33));
         updateRecycleView(trainings);
     }
 
