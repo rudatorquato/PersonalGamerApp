@@ -39,7 +39,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.crd_perfil:
-                startActivity(new Intent(context, InfoTreinoActivity.class)
+                startActivity(new Intent(context, PerfilActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 break;
             case R.id.crd_qrcode:

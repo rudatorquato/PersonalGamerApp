@@ -20,7 +20,7 @@
     <string name="personal">Personal</string>
 
     <!--Cadastro-->
-    <string name="action_measures">Cadastro de Medidas</string>
+    <string name="action_measures">Medidas</string>
 
     <string name="action_name_traning">Nome do exercicio</string>
 

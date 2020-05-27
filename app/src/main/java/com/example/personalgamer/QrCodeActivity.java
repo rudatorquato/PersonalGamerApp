@@ -19,7 +19,7 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_treinando);
+        setContentView(R.layout.activity_qr_code);
 
         loadViews();
 
