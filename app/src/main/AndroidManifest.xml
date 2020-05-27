@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PersonalActivity"></activity>
+        <activity android:name=".ExerciciosActivity"></activity>
+        <activity android:name=".PersonalActivity" />
         <activity android:name=".CadastroMedidasActivity" />
         <activity android:name=".PerfilActivity" />
         <activity android:name=".CadastroActivity" />
