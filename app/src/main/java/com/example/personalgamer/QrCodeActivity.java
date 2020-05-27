@@ -8,7 +8,6 @@ import android.os.Bundle;
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-//Responsavel pelo scan
 public class QrCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     private Context context = this;
 
@@ -23,13 +22,10 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
 
     @Override
     public void handleResult(Result result) {
-
-//        TreinandoActivity.resultado.setText(result.getText());
         startActivity(new Intent(context, InfoTreinoActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 .putExtra("qrcode", result.toString()));
         finish();
-//        onBackPressed();
     }
 
     @Override
