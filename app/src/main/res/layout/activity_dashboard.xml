@@ -9,59 +9,40 @@
     tools:context=".DashboardActivity"
     android:background="#657AFF">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crd_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="#657AFF"
+        app:cardCornerRadius="50dp"
+        app:elevation="@dimen/cardview_default_elevation"
+        tools:ignore="PrivateResource">
 
+        <ImageView
+            android:layout_width="73dp"
+            android:layout_height="85dp"
+            android:backgroundTint="@color/cardview_dark_background"
+            android:padding="0dp"
+            android:src="@drawable/quest"
+            tools:targetApi="lollipop" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"/>
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:gravity="center"
+        android:gravity="bottom"
         android:padding="16dp"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="352dp"
-            android:layout_height="146dp"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="76dp"
-                android:layout_height="wrap_content"
-                android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="#657AFF"
-                app:cardCornerRadius="50dp"
-                app:elevation="@dimen/cardview_default_elevation"
-                tools:ignore="PrivateResource">
-
-                <ImageView
-                    android:layout_width="73dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="@color/cardview_dark_background"
-                    android:padding="0dp"
-                    android:src="@drawable/quest"
-                    tools:targetApi="lollipop" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#657AFF"
-                    android:gravity="center"
-                    android:orientation="vertical" />
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
             android:clipToPadding="false"
             android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -151,6 +132,7 @@
         <LinearLayout
             android:clipToPadding="false"
             android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

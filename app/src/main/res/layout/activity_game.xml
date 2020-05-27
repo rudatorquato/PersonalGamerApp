@@ -26,51 +26,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="16dp"
+                android:background="#657AFF"
+                android:padding="30dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="352dp"
-                    android:layout_height="168dp"
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="#5948FF"
+                    app:cardCornerRadius="50dp"
+                    app:elevation="@dimen/cardview_default_elevation"
+                    tools:ignore="PrivateResource">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="325dp"
-                        android:layout_height="wrap_content"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:cardBackgroundColor="#5948FF"
-                        app:cardCornerRadius="40dp"
-                        app:elevation="@dimen/cardview_default_elevation"
-                        tools:ignore="PrivateResource">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:backgroundTint="@color/cardview_dark_background"
+                        android:src="@drawable/xp"
+                        tools:targetApi="lollipop" />
 
-                        <ImageView
-                            android:layout_width="85dp"
-                            android:layout_height="85dp"
-                            android:backgroundTint="@color/cardview_dark_background"
-                            android:padding="0dp"
-                            android:src="@drawable/xp"
-                            tools:targetApi="lollipop" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="#657AFF"
-                            android:gravity="center"
-                            android:orientation="vertical" />
-
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
-
-
-
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="386dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="30dp">
 

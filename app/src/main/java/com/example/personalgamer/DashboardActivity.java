@@ -12,7 +12,7 @@ import android.view.View;
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context = this;
     private CoordinatorLayout coordinatorLayout;
-    private CardView crd_perfil, crd_qrcode, crd_treino, crd_personal;
+    private CardView crd_perfil, crd_qrcode, crd_treino, crd_personal, crd_game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         crd_treino.setOnClickListener(this);
         crd_personal = findViewById(R.id.crd_personal);
         crd_personal.setOnClickListener(this);
+        crd_game = findViewById(R.id.crd_game);
+        crd_game.setOnClickListener(this);
 
         coordinatorLayout = findViewById(R.id.activity_dashboard);
     }
@@ -52,6 +54,10 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.crd_personal:
                 startActivity(new Intent(context, PersonalActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                break;
+            case R.id.crd_game:
+                startActivity(new Intent(context, GameActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 break;
             default:
