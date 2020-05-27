@@ -1,164 +1,164 @@
 package modelo;
 
 public class Measures {
-    float Weight, Stature, Shoulder, InspiredChest, LeftRelaxedArm, RightRelaxedArm, LeftThigh, RightThigh, LeftForearm,
-            RightForearm, LeftContractedArm, RightContractedArm, Waist, Abdomen, Hip, LeftLeg, RightLeg;
+    float weight, stature, shoulder, inspiredChest, leftRelaxedArm, rightRelaxedArm, leftThigh, rightThigh, leftForearm,
+            rightForearm, leftContractedArm, rightContractedArm, waist, abdomen, hip, leftLeg, rightLeg;
 
-    public Measures(float Weight, float Stature, float Shoulder, float InspiredChest, float LeftRelaxedArm, float RightRelaxedArm,
-                    float LeftThigh, float RightThigh, float LeftForearm, float RightForearm, float LeftContractedArm, float RightContractedArm,
-                    float Waist, float Abdomen, float Hip, float LeftLeg, float RightLeg){
-        this.Weight = Weight;
-        this.Stature = Stature;
-        this.Shoulder = Shoulder;
-        this.InspiredChest = InspiredChest;
-        this.LeftRelaxedArm = LeftRelaxedArm;
-        this.RightRelaxedArm = RightRelaxedArm;
-        this.LeftThigh = LeftThigh;
-        this.RightThigh = RightThigh;
-        this.LeftForearm = LeftForearm;
-        this.RightForearm = RightForearm;
-        this.LeftContractedArm = LeftContractedArm;
-        this.RightContractedArm = RightContractedArm;
-        this.Waist = Waist;
-        this.Abdomen = Abdomen;
-        this.Hip = Hip;
-        this.LeftLeg = LeftLeg;
-        this.RightLeg = RightLeg;
+    public Measures(float weight, float stature, float shoulder, float inspiredChest, float leftRelaxedArm, float rightRelaxedArm,
+                    float leftThigh, float rightThigh, float leftForearm, float rightForearm, float leftContractedArm, float rightContractedArm,
+                    float waist, float abdomen, float hip, float leftLeg, float rightLeg){
+        this.weight = weight;
+        this.stature = stature;
+        this.shoulder = shoulder;
+        this.inspiredChest = inspiredChest;
+        this.leftRelaxedArm = leftRelaxedArm;
+        this.rightRelaxedArm = rightRelaxedArm;
+        this.leftThigh = leftThigh;
+        this.rightThigh = rightThigh;
+        this.leftForearm = leftForearm;
+        this.rightForearm = rightForearm;
+        this.leftContractedArm = leftContractedArm;
+        this.rightContractedArm = rightContractedArm;
+        this.waist = waist;
+        this.abdomen = abdomen;
+        this.hip = hip;
+        this.leftLeg = leftLeg;
+        this.rightLeg = rightLeg;
     }
 
     public float getWeight() {
-        return Weight;
+        return weight;
     }
 
-    public void setWeight(float Weight) {
-        this.Weight = Weight;
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 
     public float getStature() {
-        return Stature;
+        return stature;
     }
 
-    public void setStature(float Stature) {
-        this.Stature = Stature;
+    public void setStature(float stature) {
+        this.stature = stature;
     }
 
     public float getShoulder() {
-        return Shoulder;
+        return shoulder;
     }
 
-    public void setShoulder(float Shoulder) {
-        this.Shoulder = Shoulder;
+    public void setShoulder(float shoulder) {
+        this.shoulder = shoulder;
     }
 
     public float getInspiredChest() {
-        return InspiredChest;
+        return inspiredChest;
     }
 
-    public void setInspiredChest(float InspiredChest) {
-        this.InspiredChest = InspiredChest;
+    public void setInspiredChest(float inspiredChest) {
+        this.inspiredChest = inspiredChest;
     }
 
     public float getLeftRelaxedArm() {
-        return LeftRelaxedArm;
+        return leftRelaxedArm;
     }
 
-    public void setLeftRelaxedArm(float LeftRelaxedArm) {
-        this.LeftRelaxedArm = LeftRelaxedArm;
+    public void setLeftRelaxedArm(float leftRelaxedArm) {
+        this.leftRelaxedArm = leftRelaxedArm;
     }
 
     public float getRightRelaxedArm() {
-        return RightRelaxedArm;
+        return rightRelaxedArm;
     }
 
-    public void setRightRelaxedArm(float RightRelaxedArm) {
-        this.RightRelaxedArm = RightRelaxedArm;
+    public void setRightRelaxedArm(float rightRelaxedArm) {
+        this.rightRelaxedArm = rightRelaxedArm;
     }
 
     public float getLeftThigh() {
-        return LeftThigh;
+        return leftThigh;
     }
 
-    public void setLeftThigh(float LeftThigh) {
-        this.LeftThigh = LeftThigh;
+    public void setLeftThigh(float leftThigh) {
+        this.leftThigh = leftThigh;
     }
 
     public float getRightThigh() {
-        return RightThigh;
+        return rightThigh;
     }
 
-    public void setRightThigh(float RightThigh) {
-        this.RightThigh = RightThigh;
+    public void setRightThigh(float rightThigh) {
+        this.rightThigh = rightThigh;
     }
 
     public float getLeftForearm() {
-        return LeftForearm;
+        return leftForearm;
     }
 
-    public void setLeftForearm(float LeftForearm) {
-        this.LeftForearm = LeftForearm;
+    public void setLeftForearm(float leftForearm) {
+        this.leftForearm = leftForearm;
     }
 
     public float getRightForearm() {
-        return RightForearm;
+        return rightForearm;
     }
 
-    public void setRightForearm(float RightForearm) {
-        this.RightForearm = RightForearm;
+    public void setRightForearm(float rightForearm) {
+        this.rightForearm = rightForearm;
     }
 
     public float getLeftContractedArm() {
-        return LeftContractedArm;
+        return leftContractedArm;
     }
 
-    public void setLeftContractedArm(float LeftContractedArm) {
-        this.LeftContractedArm = LeftContractedArm;
+    public void setLeftContractedArm(float leftContractedArm) {
+        this.leftContractedArm = leftContractedArm;
     }
 
     public float getRightContractedArm() {
-        return RightContractedArm;
+        return rightContractedArm;
     }
 
-    public void setRightContractedArm(float RightContractedArm) {
-        this.RightContractedArm = RightContractedArm;
+    public void setRightContractedArm(float rightContractedArm) {
+        this.rightContractedArm = rightContractedArm;
     }
 
     public float getWaist() {
-        return Waist;
+        return waist;
     }
 
-    public void setWaist(float Waist) {
-        this.Waist = Waist;
+    public void setWaist(float waist) {
+        this.waist = waist;
     }
 
     public float getAbdomen() {
-        return Abdomen;
+        return abdomen;
     }
 
-    public void setAbdomen(float Abdomen) {
-        this.Abdomen = Abdomen;
+    public void setAbdomen(float abdomen) {
+        this.abdomen = abdomen;
     }
 
     public float getHip() {
-        return Hip;
+        return hip;
     }
 
-    public void setHip(float Hip) {
-        this.Hip = Hip;
+    public void setHip(float hip) {
+        this.hip = hip;
     }
 
     public float getLeftLeg() {
-        return LeftLeg;
+        return leftLeg;
     }
 
-    public void setLeftLeg(float LeftLeg) {
-        this.LeftLeg = LeftLeg;
+    public void setLeftLeg(float leftLeg) {
+        this.leftLeg = leftLeg;
     }
 
     public float getRightLeg() {
-        return RightLeg;
+        return rightLeg;
     }
 
     public void setRightLeg(float rightLeg) {
-        RightLeg = rightLeg;
+        this.rightLeg = rightLeg;
     }
 }

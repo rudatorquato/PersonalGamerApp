@@ -1,35 +1,35 @@
 package modelo;
 
 public class QrCode {
-    String Images, Links, ImagesQrcode;
+    private String image, links, imageQrcode;
 
-    public QrCode(String Images, String Links, String ImagesQrcode){
-        this.Images = Images;
-        this.Links = Links;
-        this.ImagesQrcode = ImagesQrcode;
+    public QrCode(String image, String Links, String imageQrcode){
+        this.image = image;
+        this.links = Links;
+        this.imageQrcode = imageQrcode;
     }
 
-    public String getImages() {
-        return Images;
+    public String getImage() {
+        return image;
     }
 
-    public void setImages(String Images) {
-        this.Images = Images;
+    public void setImage(String images) {
+        this.image = images;
     }
 
     public String getLinks() {
-        return Links;
+        return links;
     }
 
-    public void setLinks(String Links) {
-        this.Links = Links;
+    public void setLinks(String links) {
+        this.links = links;
     }
 
-    public String getImagesQrcode() {
-        return ImagesQrcode;
+    public String getImageQrcode() {
+        return imageQrcode;
     }
 
-    public void setImagesQrcode(String ImagesQrcode) {
-        this.ImagesQrcode = ImagesQrcode;
+    public void setImageQrcode(String imageQrcode) {
+        this.imageQrcode = imageQrcode;
     }
 }

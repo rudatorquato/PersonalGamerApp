@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class Users {
     private int id;
-    private String Name,Email,Telephone,Info,TypeUser, Username;
+    private String name, email, telephone, info, typeUser, username;
     private ArrayList<Training> Training;
     private ArrayList<Measures> Measures;
 
-    public Users(int id, String Name, String Email, String Telephone, String Info, String TypeUser, String Username){
+    public Users(int id, String name, String email, String telephone, String info, String typeUser, String username){
         this.id = id;
-        this.Name = Name;
-        this.Email = Email;
-        this.Telephone = Telephone;
-        this.Info = Info;
-        this.TypeUser = TypeUser;
-        this.Username = Username;
+        this.name = name;
+        this.email = email;
+        this.telephone = telephone;
+        this.info = info;
+        this.typeUser = typeUser;
+        this.username = username;
         this.Training = new ArrayList<>();
         this.Measures = new ArrayList<>();
     }
@@ -29,75 +29,75 @@ public class Users {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTelephone() {
-        return Telephone;
+        return telephone;
     }
 
-    public void setTelephone(String Telephone) {
-        this.Telephone = Telephone;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     public String getInfo() {
-        return Info;
+        return info;
     }
 
-    public void setInfo(String Info) {
-        this.Info = Info;
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     public String getTypeUser() {
-        return TypeUser;
+        return typeUser;
     }
 
-    public void setTypeUser(String TypeUser) {
-        this.TypeUser = TypeUser;
+    public void setTypeUser(String typeUser) {
+        this.typeUser = typeUser;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
-    public void setUsername(String Username) {
-        this.Username = Username;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
 
-    public void setTraining(Training Training) {
-        this.Training.add(Training);
+    public void setTraining(Training training) {
+        this.Training.add(training);
     }
 
     public ArrayList<Training> getTraining() {
         return Training;
     }
 
-    public void setTraning(ArrayList<Training> Training) {
-        this.Training = Training;
+    public void setTraning(ArrayList<Training> trainings) {
+        this.Training = trainings;
     }
 
-    public void setMeasures(Measures Measures) {
-        this.Measures.add(Measures);
+    public void setMeasures(Measures measures) {
+        this.Measures.add(measures);
     }
 
     public ArrayList<Measures> getMeasures() {
         return Measures;
     }
 
-    public void setMeasures(ArrayList<Measures> Measures) {
-        this.Measures = Measures;
+    public void setMeasures(ArrayList<Measures> measures) {
+        this.Measures = measures;
     }
 }
