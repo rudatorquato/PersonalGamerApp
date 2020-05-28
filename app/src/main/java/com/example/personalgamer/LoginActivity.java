@@ -22,7 +22,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -233,15 +232,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             edt_username.setError(getString(R.string.error_field_required));
             focusView = edt_username;
             cancel = true;
-        } else {
-            for (Users user: users) {
-                if (user.getUsername().equals(username)) {
-                    break;
-                } else {
-                    Toast.makeText(context, "O usuário informado não existe!", Toast.LENGTH_LONG).show();
-                    cancel = true;
-                }
-            }
         }
 
         if (cancel) {
@@ -256,9 +246,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     e.printStackTrace();
                 }
 
-                startActivity(new Intent(context, DashboardActivity.class)
-                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                for (Users user: users) {
+                    if (user.getUsername().equals(username)) {
+                        startActivity(new Intent(context, DashboardActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                        finish();
+                    }
+                }
 
+                Toast.makeText(context, "O usuário informado não existe!", Toast.LENGTH_LONG).show();
 //                manager.postJson(params, Path.urlUsuarios);
 
 //                showProgress(true);
