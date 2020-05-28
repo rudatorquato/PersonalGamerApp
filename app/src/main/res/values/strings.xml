@@ -12,7 +12,8 @@
     <string name="action_sign_up">Cadastrar</string>
     <string name="action_sign_in_short">Entrar</string>
 
-    <string name="nome">Nome</string>
+    <string name="name">Nome</string>
+    <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="phone">Tel.</string>
     <string name="type">Tipo</string>
@@ -31,7 +32,7 @@
 
     <!--Cadastro Traning-->
     <string name="image">Imagem</string>
-    <string name="nameTraning">Nome do Exercicio</string>
+    <string name="nameTraning">Nome do Exercício</string>
     <string name="sequence">Sequência</string>
     <string name="place">Local</string>
     <string name="exercise">Exercício</string>

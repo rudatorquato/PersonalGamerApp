@@ -30,8 +30,8 @@ import util.VerifyConnection;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context = this;
     private Button sign_in_button, sign_in_switch, sign_up_switch, aluno_switch, personal_switch;
-    private View v_user, v_email, v_phone;
-    private TextInputEditText edt_user, edt_phone, edt_email;
+    private View v_user, v_username,  v_phone, v_email;
+    private TextInputEditText edt_user, edt_username, edt_phone, edt_email;
     private CardView crd_switch_type;
     private boolean typeuser;
     private CoordinatorLayout coordinatorLayout;
@@ -52,10 +52,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void loadViews(){
         v_user = findViewById(R.id.v_user);
+        v_username = findViewById(R.id.v_username);
         v_email = findViewById(R.id.v_email);
         v_phone = findViewById(R.id.v_phone);
 
         edt_user = findViewById(R.id.edt_user);
+        edt_username = findViewById(R.id.edt_username);
         edt_email = findViewById(R.id.edt_email);
         edt_phone = findViewById(R.id.edt_phone);
         edt_phone.addTextChangedListener(Mask.insert(edt_phone, "CPFMask"));
@@ -107,7 +109,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.sign_in_switch:
                 typeuser = false;
-                edt_user.setError(null);
+                edt_username.setError(null);
 
                 sign_up_switch.setClickable(true);
                 sign_up_switch.setTextColor(Color.parseColor("#DCDCDC"));
@@ -117,15 +119,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 sign_in_switch.setTextColor(Color.parseColor("#808080"));
                 sign_in_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_white));
 
-                v_email.setVisibility(View.GONE);
+                v_user.setVisibility(View.GONE);
                 v_phone.setVisibility(View.GONE);
+                v_email.setVisibility(View.GONE);
                 crd_switch_type.setVisibility(View.GONE);
 
                 sign_in_button.setText("Entrar");
                 break;
             case R.id.sign_up_switch:
                 typeuser = true;
-                edt_user.setError(null);
+                edt_username.setError(null);
 
                 sign_in_switch.setClickable(true);
                 sign_in_switch.setTextColor(Color.parseColor("#DCDCDC"));
@@ -135,8 +138,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 sign_up_switch.setTextColor(Color.parseColor("#808080"));
                 sign_up_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_white));
 
-                v_email.setVisibility(View.VISIBLE);
+                v_user.setVisibility(View.VISIBLE);
                 v_phone.setVisibility(View.VISIBLE);
+                v_email.setVisibility(View.VISIBLE);
                 crd_switch_type.setVisibility(View.VISIBLE);
 
                 sign_in_button.setText("Cadastrar");
@@ -177,16 +181,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void attemptLogin() {
 
-        edt_user.setError(null);
+        edt_username.setError(null);
 
-        String user = edt_user.getText().toString();
+        String username = edt_username.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
 
-        if (TextUtils.isEmpty(user)) {
-            edt_user.setError(getString(R.string.error_field_required));
-            focusView = edt_user;
+        if (TextUtils.isEmpty(username)) {
+            edt_username.setError(getString(R.string.error_field_required));
+            focusView = edt_username;
             cancel = true;
         }
 
@@ -197,7 +201,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 JSONObject params = new JSONObject();
                 try {
-                    params.put("name", user);
+                    params.put("username", username);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -223,10 +227,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void attemptRegistration() {
 
+        edt_username.setError(null);
         edt_user.setError(null);
         edt_phone.setError(null);
         edt_email.setError(null);
 
+        String username = edt_username.getText().toString();
         String user = edt_user.getText().toString();
         String  phone = Mask.unmask(edt_phone.getText().toString());
         String email = edt_email.getText().toString();
@@ -244,7 +250,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 focusView = edt_email;
                 cancel = true;
             }
-            
+
             if (TextUtils.isEmpty(phone)) {
                 edt_phone.setError(getString(R.string.error_field_required));
                 focusView = edt_phone;
@@ -262,6 +268,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             cancel = true;
         }
 
+        if (TextUtils.isEmpty(username)) {
+            edt_username.setError(getString(R.string.error_field_required));
+            focusView = edt_username;
+            cancel = true;
+        }
+
         if (cancel) {
             focusView.requestFocus();
         } else {
@@ -270,6 +282,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 JSONObject params = new JSONObject();
                 try {
                     params.put("name", user);
+                    params.put("username", username);
                     params.put("email", email);
                     params.put("telephone", phone);
                     params.put("typeuser", typeuser);
