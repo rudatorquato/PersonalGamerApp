@@ -110,10 +110,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         crd_switch_type.setVisibility(View.GONE);
 
                         sign_in_button.setText("Entrar");
-
-                        Log.d("POST CADASTRO", "SHOW");
                     } else {
-                        Log.d("POST LOGIN", "SHOW");
                         startActivity(new Intent(context, DashboardActivity.class)
                                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     }
@@ -130,14 +127,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
 
                     if (users != null) {
-                        String username = edt_username.getText().toString();
-                        for (Users user: users) {
-                            if (user.getUsername().equals(username)) {
-                                attemptLogin();
-                                Toast.makeText(context, "ACHEI: " + username, Toast.LENGTH_LONG).show();
-                                break;
-                            }
-                        }
+                        attemptLogin();
                     }
                 }
 
@@ -243,6 +233,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             edt_username.setError(getString(R.string.error_field_required));
             focusView = edt_username;
             cancel = true;
+        } else {
+            for (Users user: users) {
+                if (user.getUsername().equals(username)) {
+                    break;
+                } else {
+                    Toast.makeText(context, "O usuário informado não existe!", Toast.LENGTH_LONG).show();
+                    cancel = true;
+                }
+            }
         }
 
         if (cancel) {
@@ -256,9 +255,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-//                startActivity(new Intent(context, DashboardActivity.class)
-//                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                manager.postJson(params, Path.urlUsuarios);
+
+                startActivity(new Intent(context, DashboardActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+
+//                manager.postJson(params, Path.urlUsuarios);
 
 //                showProgress(true);
             } else {
