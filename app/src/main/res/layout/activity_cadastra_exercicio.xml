@@ -134,7 +134,7 @@
                             android:id="@+id/edt_series"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/place"
+                            android:hint="@string/series"
                             android:textSize="20sp"
                             android:inputType="numberDecimal"
                             android:maxLines="1"
