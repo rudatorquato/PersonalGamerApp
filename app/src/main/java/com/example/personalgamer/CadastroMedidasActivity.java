@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -99,27 +102,33 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
         
         if (v.getId() == R.id.btn_cadastrar) {
 
-            params.put("weight", edt_weight.getText().toString());
-            params.put("stature", edt_stature.getText().toString());
-            params.put("shoulder", edt_shoulder.getText().toString());
-            params.put("inspired_chest", edt_inspiredChest.getText().toString());
-            params.put("left_relaxed_arm", edt_leftRelaxedArm.getText().toString());
-            params.put("right_relaxed_arm", edt_rightRelaxedArm.getText().toString());
-            params.put("left_thigh", edt_leftThigh.getText().toString());
-            params.put("right_thigh", edt_rightThigh.getText().toString());
-            params.put("left_forearm", edt_leftForearm.getText().toString());
-            params.put("right_forearm", edt_rightForearm.getText().toString());
-            params.put("left_contracted_arm", edt_leftContractedArm.getText().toString());
-            params.put("right_contracted_arm", edt_rightContractedArm.getText().toString());
-            params.put("waist", edt_waist.getText().toString());
-            params.put("abdomen", edt_abdomen.getText().toString());
-            params.put("hip", edt_hip.getText().toString());
-            params.put("left_leg", edt_leftLeg.getText().toString());
-            params.put("right_leg", edt_rightLeg.getText().toString());
+            JSONObject object = new JSONObject();
 
-            params2.put("measures", params.toString());
+            try {
+                object.put("weight", edt_weight.getText());
+                object.put("stature", edt_stature.getText());
+                object.put("shoulder", edt_shoulder.getText());
+                object.put("inspired_chest", edt_inspiredChest.getText());
+                object.put("left_relaxed_arm", edt_leftRelaxedArm.getText());
+                object.put("right_relaxed_arm", edt_rightRelaxedArm.getText());
+                object.put("left_thigh", edt_leftThigh.getText());
+                object.put("right_thigh", edt_rightThigh.getText());
+                object.put("left_forearm", edt_leftForearm.getText());
+                object.put("right_forearm", edt_rightForearm.getText());
+                object.put("left_contracted_arm", edt_leftContractedArm.getText());
+                object.put("right_contracted_arm", edt_rightContractedArm.getText());
+                object.put("waist", edt_waist.getText());
+                object.put("abdomen", edt_abdomen.getText());
+                object.put("hip", edt_hip.getText());
+                object.put("left_leg", edt_leftLeg.getText());
+                object.put("right_leg", edt_rightLeg.getText());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            
+            params.put("measures", object.toString());
 
-            manager.post(params2, Path.urlUpdateMeasures);
+            manager.post(params, Path.urlUpdateMeasures);
         }
     }
 }
