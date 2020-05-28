@@ -15,6 +15,7 @@
     <string name="nome">Nome</string>
     <string name="email">Email</string>
     <string name="phone">Tel.</string>
+    <string name="type">Tipo</string>
     <string name="existe">EXISTE</string>
     <string name="novo">NOVO</string>
     <string name="aluno">Aluno</string>
@@ -50,16 +51,17 @@
     <string name="rightForearm">Antebraço Direito</string>
     <string name="leftForearm">Antebraço Esquerdo</string>
     <string name="rightContractedArm">Braço Contraído Direito</string>
-    <string name="leftContractedArm">Braço Contraído Esquerdo</string>
+    <string name="leftContractedArm">Braço Contraído Esquerd</string>
     <string name="waist">Cintura</string>
     <string name="abdomen">Abdômen</string>
     <string name="hip">Quadril</string>
-    <string name="leftLeg">Perna Esquerdo</string>
+    <string name="leftLeg">Perna Esquerda</string>
     <string name="rightLeg">Perna Direita</string>
 
     <!--Erro-->
     <string name="error_invalid_cpf">CPF não válido</string>
-    <string name="error_invalid_email">Credencial inválida</string>
+    <string name="error_invalid_email">Email não válido</string>
+    <string name="error_invalid_phone">Número não válido</string>
     <string name="error_invalid_password">Senha curta</string>
     <string name="error_incorrect_password">Senha incorreta</string>
     <string name="error_not_equal_password">As senhas não combinam</string>

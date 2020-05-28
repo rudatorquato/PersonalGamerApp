@@ -158,7 +158,7 @@
                             <TextView
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text="TypeUser:"
+                                android:text="Tipo:"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
 
