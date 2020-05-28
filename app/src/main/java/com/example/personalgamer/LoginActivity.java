@@ -234,23 +234,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         boolean cancel = false;
         View focusView = null;
 
-        if (TextUtils.isEmpty(user)) {
-            edt_user.setError(getString(R.string.error_field_required));
-            focusView = edt_user;
-            cancel = true;
-        }
-
         if (typeuser) {
-            if (TextUtils.isEmpty(phone)) {
-                edt_phone.setError(getString(R.string.error_field_required));
-                focusView = edt_phone;
-                cancel = true;
-            } else if (!isPhoneValid(phone)) {
-                edt_phone.setError(getString(R.string.error_invalid_phone));
-                focusView = edt_phone;
-                cancel = true;
-            }
-
             if (TextUtils.isEmpty(email)) {
                 edt_email.setError(getString(R.string.error_field_required));
                 focusView = edt_email;
@@ -260,6 +244,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 focusView = edt_email;
                 cancel = true;
             }
+            
+            if (TextUtils.isEmpty(phone)) {
+                edt_phone.setError(getString(R.string.error_field_required));
+                focusView = edt_phone;
+                cancel = true;
+            } else if (!isPhoneValid(phone)) {
+                edt_phone.setError(getString(R.string.error_invalid_phone));
+                focusView = edt_phone;
+                cancel = true;
+            }
+        }
+
+        if (TextUtils.isEmpty(user)) {
+            edt_user.setError(getString(R.string.error_field_required));
+            focusView = edt_user;
+            cancel = true;
         }
 
         if (cancel) {
