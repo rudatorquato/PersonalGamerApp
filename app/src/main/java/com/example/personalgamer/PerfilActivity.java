@@ -46,7 +46,7 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getUserObserver());
-        manager.get("http://med-apps.herokuapp.com/usuario/");
+        manager.get(Path.urlGetUsuario);
     }
 
     private void loadViews() {
@@ -89,7 +89,7 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
 
                 @Override
                 public void doOnGet(String response) {
-                    
+
                     try {
                         user = UsersController.getUser(response);
                         measures = MeasuresController.getMeasures(response);
