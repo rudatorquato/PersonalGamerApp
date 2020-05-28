@@ -128,6 +128,7 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
                 e.printStackTrace();
             }
 
+            Log.d("JSON", measures.toString());
             manager.putJson(measures, Path.urlUpdateMeasures);
         }
     }

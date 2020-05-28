@@ -108,8 +108,18 @@ public class NetworkManager {
 
     public void putJson (JSONObject jsonObject, String url) {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, url, jsonObject,
-                response -> networkObserver.doOnPut(response.toString()),
-                error -> networkObserver.doOnError(error.getMessage()));
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject jsonObject) {
+                        networkObserver.doOnPut(jsonObject.toString());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
 
         ConnectionController.getInstance().addToRequestQueue(request);
     }
