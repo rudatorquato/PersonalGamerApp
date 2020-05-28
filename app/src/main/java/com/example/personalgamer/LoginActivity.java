@@ -130,7 +130,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
 
                     if (users != null) {
-                        attemptLogin();
+                        String username = edt_username.getText().toString();
+                        for (Users user: users) {
+                            if (user.getUsername().equals(username)) {
+                                attemptLogin();
+                                Toast.makeText(context, "ACHEI: " + username, Toast.LENGTH_LONG).show();
+                                break;
+                            }
+                        }
                     }
                 }
 
@@ -213,14 +220,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.sign_in_button:
                 if (!change) {
-                    attemptLogin();
+                    manager.get(Path.urlUsuarios);
                 } else {
                     attemptRegistration();
                 }
-
-                break;
-            case R.id.sign_up_button:
-                attemptRegistration();
                 break;
             default:
                 break;
@@ -240,14 +243,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             edt_username.setError(getString(R.string.error_field_required));
             focusView = edt_username;
             cancel = true;
-        }
-
-        for (Users user: users) {
-            if (user.getUsername().equals(username)) {
-                cancel = false;
-                Toast.makeText(context, "ACHEI: " + username, Toast.LENGTH_LONG).show();
-                break;
-            }
         }
 
         if (cancel) {
