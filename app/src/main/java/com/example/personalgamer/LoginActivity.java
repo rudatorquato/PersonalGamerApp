@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getLoginObserver());
-        manager.get(Path.urlCadastroUsuarios);
+//        manager.get(Path.urlCadastroUsuarios);
     }
 
     private NetworkObserver getLoginObserver() {

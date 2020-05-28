@@ -39,234 +39,234 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_peso"
+                        android:id="@+id/v_weight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_peso"
+                            android:id="@+id/edt_weight"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/weight"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_altura"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <AutoCompleteTextView
-
-                            android:id="@+id/edt_altura"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/stature"
-                            android:textSize="20sp"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_ombro"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <AutoCompleteTextView
-
-                            android:id="@+id/edt_ombro"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/shoulder"
-                            android:textSize="20sp"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_torax_inspirado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <AutoCompleteTextView
-
-                            android:id="@+id/edt_torax_inspirado"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/inspiredChest"
-                            android:textSize="20sp"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_braco_relaxado_d"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <AutoCompleteTextView
-
-                            android:id="@+id/edt_braco_reçaxado_d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/rightRelaxedArm"
-                            android:textSize="20sp"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_braco_relaxado_e"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <AutoCompleteTextView
-
-                            android:id="@+id/edt_braco_reçaxado_e"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/leftRelaxedArm"
-                            android:textSize="20sp"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_coxa_d"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <AutoCompleteTextView
-
-                            android:id="@+id/edt_coxa_d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/rightThigh"
-                            android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_coxa_e"
+                        android:id="@+id/tv_stature"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_coxa_e"
+                            android:id="@+id/edt_stature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/stature"
+                            android:textSize="20sp"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/v_shoulder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <AutoCompleteTextView
+
+                            android:id="@+id/edt_shouder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/shoulder"
+                            android:textSize="20sp"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/v_inspiredChest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <AutoCompleteTextView
+
+                            android:id="@+id/edt_inspiredChest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/inspiredChest"
+                            android:textSize="20sp"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/v_rightRelaxedArm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <AutoCompleteTextView
+
+                            android:id="@+id/edt_rightRelaxedArm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/rightRelaxedArm"
+                            android:textSize="20sp"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/v_leftRelaxedArm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <AutoCompleteTextView
+
+                            android:id="@+id/edt_leftRelaxedArm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/leftRelaxedArm"
+                            android:textSize="20sp"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/v_leftThigh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <AutoCompleteTextView
+
+                            android:id="@+id/edt_leftThigh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/rightThigh"
+                            android:textSize="20sp"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/v_rightThigh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <AutoCompleteTextView
+
+                            android:id="@+id/edt_rightThigh"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/leftThigh"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
+                            android:singleLine="true" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_antebraco_d"
+                        android:id="@+id/v_rightForearm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_antebraco_d"
+                            android:id="@+id/edt_rightForearm"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/rightForearm"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
+                            android:singleLine="true" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_antebraco_e"
+                        android:id="@+id/v_leftForearm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_antebraco_e"
+                            android:id="@+id/edt_leftForearm"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/leftForearm"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
+                            android:singleLine="true" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_braco_contraido_d"
+                        android:id="@+id/v_rightContractedArm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_braco_contraido_d"
+                            android:id="@+id/edt_rightContractedArm"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/rightContractedArm"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
+                            android:singleLine="true" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_braco_contraido_e"
+                        android:id="@+id/v_edt_leftContractedArm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_braco_contraido_e"
+                            android:id="@+id/edt_leftContractedArm"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/leftContractedArm"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
-                            android:singleLine="true" /><!-- AQUI vai ser TypeUser-->
+                            android:singleLine="true" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_cintura"
+                        android:id="@+id/v_waist"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_cintura"
+                            android:id="@+id/edt_waist"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/waist"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
@@ -284,61 +284,61 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/abdomen"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_quadril"
+                        android:id="@+id/v_hip"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_quadril"
+                            android:id="@+id/edt_hip"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/hip"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_perna_d"
+                        android:id="@+id/v_rightLeg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_perna_d"
+                            android:id="@+id/edt_rightLeg"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/rightLeg"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/v_perna_e"
+                        android:id="@+id/v_legtLeg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <AutoCompleteTextView
 
-                            android:id="@+id/edt_perna_e"
+                            android:id="@+id/edt_leftLeg"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/leftLeg"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
