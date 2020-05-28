@@ -109,29 +109,29 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
     public void onClick(View v) {
 
         if (v.getId() == R.id.btn_cadastrar) {
-            
+
             if (attemptRegister()) {
                 JSONObject measures = new JSONObject();
                 JSONObject object = new JSONObject();
 
                 try {
-                    object.put("weight", weight);
-                    object.put("stature", stature);
-                    object.put("shoulder", shoulder);
-                    object.put("inspired_chest", inspiredChest);
-                    object.put("left_relaxed_arm", edt_leftRelaxedArm);
-                    object.put("right_relaxed_arm", edt_rightRelaxedArm);
-                    object.put("left_thigh", leftThigh);
-                    object.put("right_thigh", rightThigh);
-                    object.put("left_forearm", leftForearm);
-                    object.put("right_forearm", rightForearm);
-                    object.put("left_contracted_arm", leftContractedArm);
-                    object.put("right_contracted_arm", leftContractedArm);
-                    object.put("waist", waist);
-                    object.put("abdomen", abdomen);
-                    object.put("hip", hip);
-                    object.put("left_leg", leftLeg);
-                    object.put("right_leg", rightLeg);
+                    object.put("weight", Float.parseFloat(weight));
+                    object.put("stature", Float.parseFloat(stature));
+                    object.put("shoulder", Float.parseFloat(shoulder));
+                    object.put("inspired_chest", Float.parseFloat(inspiredChest));
+                    object.put("left_relaxed_arm", Float.parseFloat(leftRelaxedArm));
+                    object.put("right_relaxed_arm", Float.parseFloat(rightRelaxedArm));
+                    object.put("left_thigh", Float.parseFloat(leftThigh));
+                    object.put("right_thigh", Float.parseFloat(rightThigh));
+                    object.put("left_forearm", Float.parseFloat(leftForearm));
+                    object.put("right_forearm", Float.parseFloat(rightForearm));
+                    object.put("left_contracted_arm", Float.parseFloat(leftContractedArm));
+                    object.put("right_contracted_arm", Float.parseFloat(leftContractedArm));
+                    object.put("waist", Float.parseFloat(waist));
+                    object.put("abdomen", Float.parseFloat(abdomen));
+                    object.put("hip", Float.parseFloat(hip));
+                    object.put("left_leg", Float.parseFloat(leftLeg));
+                    object.put("right_leg", Float.parseFloat(rightLeg));
 
                     measures.put("measures", object);
 
