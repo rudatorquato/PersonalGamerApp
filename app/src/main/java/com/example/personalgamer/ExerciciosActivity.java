@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,12 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
     private Context context = this;
     private Button btn_cadastrar;
     private ExerciciosAdapter exerciciosAdapter;
+
+    private TextView tv_training, tv_sequence, tv_place, tv_exercise, tv_series, tv_repetitions, tv_charge;
+
+    private Training training;
+
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,16 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void loadViews() {
+
+        tv_training = findViewById(R.id.tv_training);
+        tv_sequence = findViewById(R.id.tv_sequence);
+        tv_place = findViewById(R.id.tv_place);
+        tv_exercise = findViewById(R.id.tv_exercise);
+        tv_series = findViewById(R.id.tv_series);
+        tv_repetitions = findViewById(R.id.tv_repetition);
+        tv_charge = findViewById(R.id.tv_charge);
+
+
         btn_cadastrar = findViewById(R.id.btn_cadastrar);
         btn_cadastrar.setOnClickListener(this);
     }
@@ -51,6 +68,16 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
         recyclerView.setAdapter(exerciciosAdapter);
         registerForContextMenu(recyclerView);
         exerciciosAdapter.setOnClick(ExerciciosActivity.this);
+    }
+
+    public void setTraining() {
+        tv_training.setText(training.getTraining());
+        tv_sequence.setText(String.valueOf(training.getSequence()));
+        tv_place.setText(training.getPlace());
+        tv_exercise.setText(training.getExercise());
+        tv_series.setText(String.valueOf(training.getSeries()));
+        tv_repetitions.setText(String.valueOf(training.getRepetitions()));
+        tv_charge.setText(String.valueOf(training.getCharge()));
     }
 
     @Override
