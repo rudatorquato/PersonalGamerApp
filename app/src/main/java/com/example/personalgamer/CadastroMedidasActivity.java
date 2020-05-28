@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.HashMap;
@@ -17,10 +19,12 @@ import network.NetworkManager;
 import util.Path;
 
 public class CadastroMedidasActivity extends AppCompatActivity implements View.OnClickListener {
-    Context context = this;
+    private Context context = this;
     private EditText edt_weight, edt_stature, edt_shoulder, edt_inspiredChest, edt_leftRelaxedArm,
             edt_rightRelaxedArm, edt_leftThigh, edt_rightThigh, edt_leftForearm, edt_rightForearm,
             edt_leftContractedArm, edt_rightContractedArm, edt_waist, edt_abdomen, edt_hip, edt_leftLeg, edt_rightLeg;
+
+    private Button btn_cadastrar;
 
     private Map<String, String> params = new HashMap<>();
     private Map<String, String> params2 = new HashMap<>();
@@ -59,6 +63,9 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
         edt_hip = findViewById(R.id.edt_hip);
         edt_leftLeg = findViewById(R.id.edt_leftLeg);
         edt_rightLeg = findViewById(R.id.edt_rightLeg);
+
+        btn_cadastrar = findViewById(R.id.btn_cadastrar);
+        btn_cadastrar.setOnClickListener(this);
     }
 
     private NetworkObserver getMedidasrObserver() {
@@ -87,6 +94,7 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onClick(View v) {
+        
         if (v.getId() == R.id.btn_cadastrar) {
 
             params.put("weight", edt_weight.getText().toString());
