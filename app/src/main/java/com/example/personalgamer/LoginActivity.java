@@ -24,6 +24,7 @@ import org.json.JSONObject;
 import interfaces.NetworkObserver;
 import network.NetworkManager;
 import util.Mask;
+import util.Path;
 import util.VerifyConnection;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -295,7 +296,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     e.printStackTrace();
                 }
 
-//                manager.post(params, Path.urlCadastroUsuarios);
+                manager.postJson(params, Path.urlCadastroUsuarios);
 
 //                showProgress(true);
             } else {

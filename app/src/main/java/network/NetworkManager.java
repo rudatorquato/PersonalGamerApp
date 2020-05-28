@@ -88,10 +88,20 @@ public class NetworkManager {
         ConnectionController.getInstance().addToRequestQueue(request);
     }
 
+    public void postJson (JSONObject jsonObject, String url) {
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
+                response -> networkObserver.doOnPut(response.toString()),
+                error -> {
+
+                });
+
+        ConnectionController.getInstance().addToRequestQueue(request);
+    }
+
     public void postArray (JSONObject jsonObject, String url) {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
-                jsonObject1 -> System.out.println("Show"),
-                volleyError -> {
+                response -> System.out.println("Show"),
+                error -> {
 
                 });
 
@@ -100,8 +110,8 @@ public class NetworkManager {
 
     public void putJson (JSONObject jsonObject, String url) {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, url, jsonObject,
-                jsonObject1 -> networkObserver.doOnPut(jsonObject1.toString()),
-                volleyError -> {
+                response -> networkObserver.doOnPut(response.toString()),
+                error -> {
 
                 });
 
