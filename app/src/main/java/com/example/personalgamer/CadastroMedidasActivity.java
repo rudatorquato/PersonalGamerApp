@@ -125,10 +125,10 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            
+
             params.put("measures", object.toString());
 
-            manager.post(params, Path.urlUpdateMeasures);
+            manager.put(params, Path.urlUpdateMeasures);
         }
     }
 }

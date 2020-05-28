@@ -68,6 +68,19 @@ public class NetworkManager {
         ConnectionController.getInstance().addToRequestQueue(request);
     }
 
+    public void put(final Map<String, String> params, String url){
+        StringRequest request = new StringRequest(Request.Method.PUT, url,
+                response -> networkObserver.doOnPost(response),
+                error -> networkObserver.doOnError(error.getMessage())) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                return params;
+            }
+        };
+        ConnectionController.getInstance().addToRequestQueue(request);
+    }
+
     public void del(String url){
         StringRequest request = new StringRequest(Request.Method.DELETE, url,
                 response -> { },
