@@ -123,7 +123,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_telephone"
+                                android:id="@+id/tv_phone"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:textSize="20sp" />

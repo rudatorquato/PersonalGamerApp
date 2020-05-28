@@ -90,17 +90,9 @@ public class NetworkManager {
 
     public void postArray (JSONObject jsonObject, String url) {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject jsonObject) {
-                        System.out.println("Show");
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
+                jsonObject1 -> System.out.println("Show"),
+                volleyError -> {
 
-                    }
                 });
 
         ConnectionController.getInstance().addToRequestQueue(request);
@@ -108,17 +100,9 @@ public class NetworkManager {
 
     public void putJson (JSONObject jsonObject, String url) {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, url, jsonObject,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject jsonObject) {
-                        networkObserver.doOnPut(jsonObject.toString());
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
+                jsonObject1 -> networkObserver.doOnPut(jsonObject1.toString()),
+                volleyError -> {
 
-                    }
                 });
 
         ConnectionController.getInstance().addToRequestQueue(request);

@@ -4,16 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONException;
 
-import controller.MeasuresController;
 import controller.UsersController;
 import interfaces.NetworkObserver;
-import modelo.Measures;
 import modelo.Users;
 import network.NetworkManager;
 import util.Path;
@@ -42,7 +38,7 @@ public class PersonalActivity extends AppCompatActivity {
     private void loadViews() {
         tv_name = findViewById(R.id.tv_name);
         tv_email = findViewById(R.id.tv_email);
-        tv_telephone = findViewById(R.id.tv_telephone);
+        tv_telephone = findViewById(R.id.tv_phone);
 
     }
 
@@ -86,6 +82,6 @@ public class PersonalActivity extends AppCompatActivity {
     public void setUser() {
         tv_name.setText(user.getName());
         tv_email.setText(user.getEmail());
-        tv_telephone.setText(user.getTelephone());
+        tv_telephone.setText(user.getPhone());
     }
 }

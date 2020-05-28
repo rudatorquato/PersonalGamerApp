@@ -119,7 +119,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/username"
                             android:textSize="20sp"
-                            android:inputType="phone"
+                            android:inputType="textPersonName"
                             android:maxLines="1"
                             android:singleLine="true" />
 

@@ -5,15 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONException;
-
-import java.util.ArrayList;
 
 import controller.MeasuresController;
 import controller.UsersController;
@@ -25,7 +21,7 @@ import util.Path;
 
 public class PerfilActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context = this;
-    private TextView tv_name, tv_email, tv_telephone, tv_info, tv_type_user, tv_username;
+    private TextView tv_name, tv_email, tv_phone, tv_info, tv_type_user, tv_username;
     private TextView tv_weight, tv_stature, tv_shoulder, tv_inspiredChest, tv_leftRelaxedArm,
             tv_rightRelaxedArm, tv_leftThigh, tv_rightThigh, tv_leftForearm, tv_rightForearm,
             tv_leftContractedArm, tv_rightContractedArm, tv_waist, tv_abdomen, tv_hip, tv_leftLeg, tv_rightLeg;
@@ -52,7 +48,7 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
     private void loadViews() {
         tv_name = findViewById(R.id.tv_name);
         tv_email = findViewById(R.id.tv_email);
-        tv_telephone = findViewById(R.id.tv_telephone);
+        tv_phone = findViewById(R.id.tv_phone);
         tv_info = findViewById(R.id.tv_info);
         tv_type_user = findViewById(R.id.tv_type_user);
         tv_username = findViewById(R.id.tv_username);
@@ -123,7 +119,7 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
     public void setUser() {
         tv_name.setText(user.getName());
         tv_email.setText(user.getEmail());
-        tv_telephone.setText(user.getTelephone());
+        tv_phone.setText(user.getPhone());
         tv_info.setText(user.getInfo());
         tv_type_user.setText(user.getTypeUser());
         tv_username.setText(user.getUsername());

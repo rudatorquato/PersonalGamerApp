@@ -3,15 +3,15 @@ package modelo;
 import java.util.ArrayList;
 
 public class Users {
-    private String id, name, email, telephone, info, typeUser, username;
+    private String id, name, email, phone, info, typeUser, username;
     private ArrayList<Training> Training;
     private ArrayList<Measures> Measures;
 
-    public Users(String id, String name, String email, String telephone, String info, String typeUser, String username){
+    public Users(String id, String name, String email, String phone, String info, String typeUser, String username){
         this.id = id;
         this.name = name;
         this.email = email;
-        this.telephone = telephone;
+        this.phone = phone;
         this.info = info;
         this.typeUser = typeUser;
         this.username = username;
@@ -43,12 +43,12 @@ public class Users {
         this.email = email;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getInfo() {
@@ -74,7 +74,6 @@ public class Users {
     public void setUsername(String username) {
         this.username = username;
     }
-
 
     public void setTraining(Training training) {
         this.Training.add(training);

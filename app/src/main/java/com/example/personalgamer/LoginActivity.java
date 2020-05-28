@@ -24,7 +24,6 @@ import org.json.JSONObject;
 import interfaces.NetworkObserver;
 import network.NetworkManager;
 import util.Mask;
-import util.Path;
 import util.VerifyConnection;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -33,8 +32,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private View v_user, v_username,  v_phone, v_email;
     private TextInputEditText edt_user, edt_username, edt_phone, edt_email;
     private CardView crd_switch_type;
-    private boolean typeuser;
     private CoordinatorLayout coordinatorLayout;
+
+    private boolean change;
+    private String usertype = "aluno";
 
     private NetworkManager manager;
     private NetworkObserver networkObserver;
@@ -108,7 +109,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_switch:
-                typeuser = false;
+                change = false;
                 edt_username.setError(null);
 
                 sign_up_switch.setClickable(true);
@@ -127,7 +128,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 sign_in_button.setText("Entrar");
                 break;
             case R.id.sign_up_switch:
-                typeuser = true;
+                change = true;
                 edt_username.setError(null);
 
                 sign_in_switch.setClickable(true);
@@ -146,6 +147,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 sign_in_button.setText("Cadastrar");
                 break;
             case R.id.aluno_switch:
+                usertype = "aluno";
+
                 personal_switch.setClickable(true);
                 personal_switch.setTextColor(Color.parseColor("#DCDCDC"));
                 personal_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_border));
@@ -155,6 +158,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 aluno_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_white));
                 break;
             case R.id.personal_switch:
+                usertype = "personal";
+
                 aluno_switch.setClickable(true);
                 aluno_switch.setTextColor(Color.parseColor("#DCDCDC"));
                 aluno_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_border));
@@ -164,7 +169,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 personal_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_white));
                 break;
             case R.id.sign_in_button:
-                if (!typeuser) {
+                if (!change) {
                     attemptLogin();
                 } else {
                     attemptRegistration();
@@ -240,7 +245,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         boolean cancel = false;
         View focusView = null;
 
-        if (typeuser) {
+        if (change) {
             if (TextUtils.isEmpty(email)) {
                 edt_email.setError(getString(R.string.error_field_required));
                 focusView = edt_email;
@@ -285,7 +290,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     params.put("username", username);
                     params.put("email", email);
                     params.put("telephone", phone);
-                    params.put("typeuser", typeuser);
+                    params.put("typeuser", usertype);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
