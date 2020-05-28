@@ -1,14 +1,18 @@
 package com.example.personalgamer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,9 +24,14 @@ import util.Path;
 
 public class CadastroMedidasActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context = this;
+    private CoordinatorLayout coordinatorLayout;
+
     private EditText edt_weight, edt_stature, edt_shoulder, edt_inspiredChest, edt_leftRelaxedArm,
             edt_rightRelaxedArm, edt_leftThigh, edt_rightThigh, edt_leftForearm, edt_rightForearm,
             edt_leftContractedArm, edt_rightContractedArm, edt_waist, edt_abdomen, edt_hip, edt_leftLeg, edt_rightLeg;
+
+    private String weight, stature, shoulder, inspiredChest, leftRelaxedArm, rightRelaxedArm, leftThigh, rightThigh, leftForearm,
+            rightForearm, leftContractedArm, rightContractedArm, waist, abdomen, hip, leftLeg, rightLeg;
 
     private Button btn_cadastrar;
 
@@ -63,10 +72,12 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
 
         btn_cadastrar = findViewById(R.id.btn_cadastrar);
         btn_cadastrar.setOnClickListener(this);
+
+        coordinatorLayout = findViewById(R.id.activity_cadastro_medidas);
     }
 
     private NetworkObserver getMedidasrObserver() {
-        if (networkObserver == null){
+        if (networkObserver == null) {
             networkObserver = new NetworkObserver() {
                 @Override
                 public void doOnPost(String response) {
@@ -96,62 +107,73 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onClick(View v) {
-        
+
         if (v.getId() == R.id.btn_cadastrar) {
+            
+            if (attemptRegister()) {
+                JSONObject measures = new JSONObject();
+                JSONObject object = new JSONObject();
 
-            JSONObject measures = new JSONObject();
-            JSONObject object = new JSONObject();
+                try {
+                    object.put("weight", weight);
+                    object.put("stature", stature);
+                    object.put("shoulder", shoulder);
+                    object.put("inspired_chest", inspiredChest);
+                    object.put("left_relaxed_arm", edt_leftRelaxedArm);
+                    object.put("right_relaxed_arm", edt_rightRelaxedArm);
+                    object.put("left_thigh", leftThigh);
+                    object.put("right_thigh", rightThigh);
+                    object.put("left_forearm", leftForearm);
+                    object.put("right_forearm", rightForearm);
+                    object.put("left_contracted_arm", leftContractedArm);
+                    object.put("right_contracted_arm", leftContractedArm);
+                    object.put("waist", waist);
+                    object.put("abdomen", abdomen);
+                    object.put("hip", hip);
+                    object.put("left_leg", leftLeg);
+                    object.put("right_leg", rightLeg);
 
-            try {
-                object.put("weight", Float.parseFloat(edt_weight.getText().toString()));
-                object.put("stature", Float.parseFloat(edt_stature.getText().toString()));
-                object.put("shoulder", Float.parseFloat(edt_shoulder.getText().toString()));
-                object.put("inspired_chest", Float.parseFloat(edt_inspiredChest.getText().toString()));
-                object.put("left_relaxed_arm", Float.parseFloat(edt_leftRelaxedArm.getText().toString()));
-                object.put("right_relaxed_arm", Float.parseFloat(edt_rightRelaxedArm.getText().toString()));
-                object.put("left_thigh", Float.parseFloat(edt_leftThigh.getText().toString()));
-                object.put("right_thigh", Float.parseFloat(edt_rightThigh.getText().toString()));
-                object.put("left_forearm", Float.parseFloat(edt_leftForearm.getText().toString()));
-                object.put("right_forearm", Float.parseFloat(edt_rightForearm.getText().toString()));
-                object.put("left_contracted_arm", Float.parseFloat(edt_leftContractedArm.getText().toString()));
-                object.put("right_contracted_arm", Float.parseFloat(edt_rightContractedArm.getText().toString()));
-                object.put("waist", Float.parseFloat(edt_waist.getText().toString()));
-                object.put("abdomen", Float.parseFloat(edt_abdomen.getText().toString()));
-                object.put("hip", Float.parseFloat(edt_hip.getText().toString()));
-                object.put("left_leg", Float.parseFloat(edt_leftLeg.getText().toString()));
-                object.put("right_leg", Float.parseFloat(edt_rightLeg.getText().toString()));
+                    measures.put("measures", object);
 
-                measures.put("measures", object);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
-            } catch (JSONException e) {
-                e.printStackTrace();
+                Log.d("JSON", measures.toString());
+                manager.putJson(measures, Path.urlUpdateMeasures);
             }
-
-//            try {
-//                object.put("weight", 1);
-//                object.put("stature", 1);
-//                object.put("shoulder", 1);
-//                object.put("inspired_chest", 1);
-//                object.put("left_relaxed_arm", 1);
-//                object.put("right_relaxed_arm", 1);
-//                object.put("left_thigh", 1);
-//                object.put("right_thigh", 1);
-//                object.put("left_forearm", 1);
-//                object.put("right_forearm", 1);
-//                object.put("left_contracted_arm", 1);
-//                object.put("right_contracted_arm", 1);
-//                object.put("waist", 1);
-//                object.put("abdomen", 1);
-//                object.put("hip", 1);
-//                object.put("left_leg", 1);
-//                object.put("right_leg", 1);
-//
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-
-            Log.d("JSON", measures.toString());
-            manager.putJson(measures, Path.urlUpdateMeasures);
         }
+    }
+
+    private boolean attemptRegister() {
+        weight = edt_weight.getText().toString();
+        stature = edt_stature.getText().toString();
+        shoulder = edt_shoulder.getText().toString();
+        inspiredChest = edt_inspiredChest.getText().toString();
+        leftRelaxedArm = edt_leftRelaxedArm.getText().toString();
+        rightRelaxedArm = edt_rightRelaxedArm.getText().toString();
+        leftThigh = edt_leftThigh.getText().toString();
+        rightThigh = edt_rightThigh.getText().toString();
+        leftForearm = edt_leftForearm.getText().toString();
+        rightForearm = edt_rightForearm.getText().toString();
+        leftContractedArm =  edt_leftContractedArm.getText().toString();
+        rightContractedArm = edt_rightContractedArm.getText().toString();
+        waist = edt_waist.getText().toString();
+        abdomen = edt_abdomen.getText().toString();
+        hip = edt_hip.getText().toString();
+        leftLeg = edt_leftLeg.getText().toString();
+        rightLeg = edt_rightLeg.getText().toString();
+
+        if (weight.isEmpty() || stature.isEmpty() || shoulder.isEmpty() || inspiredChest.isEmpty() || leftRelaxedArm.isEmpty() ||
+                rightRelaxedArm.isEmpty() || leftThigh.isEmpty() || rightThigh.isEmpty() || leftForearm.isEmpty() ||
+                rightForearm.isEmpty() || leftContractedArm.isEmpty() || rightContractedArm.isEmpty() || waist.isEmpty() ||
+                abdomen.isEmpty() || hip.isEmpty()|| leftLeg.isEmpty() || rightLeg.isEmpty()) {
+
+            Snackbar.make(coordinatorLayout, "Preencha todos os campos!", Snackbar.LENGTH_LONG).show();
+
+            return false;
+        }
+
+        return true;
     }
 }
