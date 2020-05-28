@@ -121,8 +121,12 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
                 object.put("left_leg", edt_leftLeg.getText().toString());
                 object.put("right_leg", edt_rightLeg.getText().toString());
 
-                measures.put("measures", object);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
+            try {
+                measures.put("measures", object);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
