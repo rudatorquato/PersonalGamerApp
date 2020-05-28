@@ -21,7 +21,6 @@ public class CadastraExercicioActivity extends AppCompatActivity {
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getExercicioObserver());
-        manager.get(Path.urlCadastroUsuarios);
     }
 
     private NetworkObserver getExercicioObserver() {
@@ -35,6 +34,11 @@ public class CadastraExercicioActivity extends AppCompatActivity {
                 @Override
                 public void doOnGet(String response) {
                     Log.d("RESPONSE", response);
+                }
+
+                @Override
+                public void doOnPut(String response) {
+
                 }
 
                 @Override

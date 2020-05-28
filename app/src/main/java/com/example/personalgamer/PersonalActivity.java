@@ -71,6 +71,11 @@ public class PersonalActivity extends AppCompatActivity {
                 }
 
                 @Override
+                public void doOnPut(String response) {
+
+                }
+
+                @Override
                 public void doOnError(String response) {
                 }
             };

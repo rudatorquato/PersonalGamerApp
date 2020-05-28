@@ -29,7 +29,6 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getCadastroObserver());
-        manager.get(Path.urlCadastroUsuarios);
     }
 
     private NetworkObserver getCadastroObserver() {
@@ -43,6 +42,11 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
                 @Override
                 public void doOnGet(String response) {
                     Log.d("RESPONSE", response);
+                }
+
+                @Override
+                public void doOnPut(String response) {
+
                 }
 
                 @Override

@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getLoginObserver());
-//        manager.get(Path.urlCadastroUsuarios);
     }
 
     private NetworkObserver getLoginObserver() {
@@ -53,6 +52,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void doOnGet(String response) {
                     Log.d("RESPONSE", response);
+                }
+
+                @Override
+                public void doOnPut(String response) {
+
                 }
 
                 @Override

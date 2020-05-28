@@ -108,6 +108,11 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
                 }
 
                 @Override
+                public void doOnPut(String response) {
+
+                }
+
+                @Override
                 public void doOnError(String response) {
                 }
             };

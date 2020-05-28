@@ -13,9 +13,6 @@ import android.widget.EditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import interfaces.NetworkObserver;
 import modelo.Measures;
 import network.NetworkManager;
@@ -28,9 +25,6 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
             edt_leftContractedArm, edt_rightContractedArm, edt_waist, edt_abdomen, edt_hip, edt_leftLeg, edt_rightLeg;
 
     private Button btn_cadastrar;
-
-    private Map<String, String> params = new HashMap<>();
-    private Map<String, String> params2 = new HashMap<>();
 
     private Measures measures;
 
@@ -77,9 +71,7 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
             networkObserver = new NetworkObserver() {
                 @Override
                 public void doOnPost(String response) {
-                    startActivity(new Intent(context, CadastroMedidasActivity.class)
-                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                    finish();
+
                 }
 
                 @Override
@@ -88,8 +80,14 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
                 }
 
                 @Override
+                public void doOnPut(String response) {
+                    startActivity(new Intent(context, PerfilActivity.class)
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                    finish();
+                }
+
+                @Override
                 public void doOnError(String response) {
-//                    Log.d("ERRO", response);
 
                 }
             };
@@ -102,64 +100,33 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
         
         if (v.getId() == R.id.btn_cadastrar) {
 
+            JSONObject measures = new JSONObject();
             JSONObject object = new JSONObject();
 
-//            try {
-//                object.put("weight", edt_weight.getText());
-//                object.put("stature", edt_stature.getText());
-//                object.put("shoulder", edt_shoulder.getText());
-//                object.put("inspired_chest", edt_inspiredChest.getText());
-//                object.put("left_relaxed_arm", edt_leftRelaxedArm.getText());
-//                object.put("right_relaxed_arm", edt_rightRelaxedArm.getText());
-//                object.put("left_thigh", edt_leftThigh.getText());
-//                object.put("right_thigh", edt_rightThigh.getText());
-//                object.put("left_forearm", edt_leftForearm.getText());
-//                object.put("right_forearm", edt_rightForearm.getText());
-//                object.put("left_contracted_arm", edt_leftContractedArm.getText());
-//                object.put("right_contracted_arm", edt_rightContractedArm.getText());
-//                object.put("waist", edt_waist.getText());
-//                object.put("abdomen", edt_abdomen.getText());
-//                object.put("hip", edt_hip.getText());
-//                object.put("left_leg", edt_leftLeg.getText());
-//                object.put("right_leg", edt_rightLeg.getText());
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-
             try {
-                object.put("weight", 1);
-                object.put("stature", 1);
-                object.put("shoulder", 1);
-                object.put("inspired_chest", 1);
-                object.put("left_relaxed_arm", 1);
-                object.put("right_relaxed_arm", 1);
-                object.put("left_thigh", 1);
-                object.put("right_thigh", 1);
-                object.put("left_forearm", 1);
-                object.put("right_forearm", 1);
-                object.put("left_contracted_arm", 1);
-                object.put("right_contracted_arm", 1);
-                object.put("waist", 1);
-                object.put("abdomen",1);
-                object.put("hip", 1);
-                object.put("left_leg", 1);
-                object.put("right_leg", 1);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+                object.put("weight", edt_weight.getText());
+                object.put("stature", edt_stature.getText());
+                object.put("shoulder", edt_shoulder.getText());
+                object.put("inspired_chest", edt_inspiredChest.getText());
+                object.put("left_relaxed_arm", edt_leftRelaxedArm.getText());
+                object.put("right_relaxed_arm", edt_rightRelaxedArm.getText());
+                object.put("left_thigh", edt_leftThigh.getText());
+                object.put("right_thigh", edt_rightThigh.getText());
+                object.put("left_forearm", edt_leftForearm.getText());
+                object.put("right_forearm", edt_rightForearm.getText());
+                object.put("left_contracted_arm", edt_leftContractedArm.getText());
+                object.put("right_contracted_arm", edt_rightContractedArm.getText());
+                object.put("waist", edt_waist.getText());
+                object.put("abdomen", edt_abdomen.getText());
+                object.put("hip", edt_hip.getText());
+                object.put("left_leg", edt_leftLeg.getText());
+                object.put("right_leg", edt_rightLeg.getText());
 
-            JSONObject measures = new JSONObject();
-
-            try {
                 measures.put("measures", object);
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-            Log.d("JSON", measures.toString());
-//            params.put("measures", object.toString());
-
-//            manager.put(params, Path.urlUpdateMeasures);
 
             manager.putJson(measures, Path.urlUpdateMeasures);
         }
