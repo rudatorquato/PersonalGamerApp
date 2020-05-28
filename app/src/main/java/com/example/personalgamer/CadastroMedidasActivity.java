@@ -102,24 +102,47 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
             JSONObject measures = new JSONObject();
             JSONObject object = new JSONObject();
 
+//            try {
+//                object.put("weight", edt_weight.getText().toString());
+//                object.put("stature", edt_stature.getText().toString());
+//                object.put("shoulder", edt_shoulder.getText().toString());
+//                object.put("inspired_chest", edt_inspiredChest.getText().toString());
+//                object.put("left_relaxed_arm", edt_leftRelaxedArm.getText().toString());
+//                object.put("right_relaxed_arm", edt_rightRelaxedArm.getText().toString());
+//                object.put("left_thigh", edt_leftThigh.getText().toString());
+//                object.put("right_thigh", edt_rightThigh.getText().toString());
+//                object.put("left_forearm", edt_leftForearm.getText().toString());
+//                object.put("right_forearm", edt_rightForearm.getText().toString());
+//                object.put("left_contracted_arm", edt_leftContractedArm.getText().toString());
+//                object.put("right_contracted_arm", edt_rightContractedArm.getText().toString());
+//                object.put("waist", edt_waist.getText().toString());
+//                object.put("abdomen", edt_abdomen.getText().toString());
+//                object.put("hip", edt_hip.getText().toString());
+//                object.put("left_leg", edt_leftLeg.getText().toString());
+//                object.put("right_leg", edt_rightLeg.getText().toString());
+//
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+
             try {
-                object.put("weight", edt_weight.getText().toString());
-                object.put("stature", edt_stature.getText().toString());
-                object.put("shoulder", edt_shoulder.getText().toString());
-                object.put("inspired_chest", edt_inspiredChest.getText().toString());
-                object.put("left_relaxed_arm", edt_leftRelaxedArm.getText().toString());
-                object.put("right_relaxed_arm", edt_rightRelaxedArm.getText().toString());
-                object.put("left_thigh", edt_leftThigh.getText().toString());
-                object.put("right_thigh", edt_rightThigh.getText().toString());
-                object.put("left_forearm", edt_leftForearm.getText().toString());
-                object.put("right_forearm", edt_rightForearm.getText().toString());
-                object.put("left_contracted_arm", edt_leftContractedArm.getText().toString());
-                object.put("right_contracted_arm", edt_rightContractedArm.getText().toString());
-                object.put("waist", edt_waist.getText().toString());
-                object.put("abdomen", edt_abdomen.getText().toString());
-                object.put("hip", edt_hip.getText().toString());
-                object.put("left_leg", edt_leftLeg.getText().toString());
-                object.put("right_leg", edt_rightLeg.getText().toString());
+                object.put("weight", 1);
+                object.put("stature", 1);
+                object.put("shoulder", 1);
+                object.put("inspired_chest", 1);
+                object.put("left_relaxed_arm", 1);
+                object.put("right_relaxed_arm", 1);
+                object.put("left_thigh", 1);
+                object.put("right_thigh", 1);
+                object.put("left_forearm", 1);
+                object.put("right_forearm", 1);
+                object.put("left_contracted_arm", 1);
+                object.put("right_contracted_arm", 1);
+                object.put("waist", 1);
+                object.put("abdomen", 1);
+                object.put("hip", 1);
+                object.put("left_leg", 1);
+                object.put("right_leg", 1);
 
             } catch (JSONException e) {
                 e.printStackTrace();
