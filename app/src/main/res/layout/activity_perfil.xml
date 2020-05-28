@@ -81,7 +81,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_nome"
+                                android:id="@+id/tv_name"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:textSize="20sp" />
@@ -123,27 +123,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_phone"
-                                android:layout_weight="1"
-                                android:padding="10dip"
-                                android:textSize="20sp" />
-
-                        </TableRow>
-
-                        <TableRow
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal">
-
-                            <TextView
-                                android:layout_weight="1"
-                                android:padding="10dip"
-                                android:text="Carga:"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tv_carga"
+                                android:id="@+id/tv_telephone"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:textSize="20sp" />
@@ -190,6 +170,27 @@
 
                         </TableRow>
 
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:layout_weight="1"
+                                android:padding="10dip"
+                                android:text="Username:"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_username"
+                                android:layout_weight="1"
+                                android:padding="10dip"
+                                android:textSize="20sp" />
+
+                        </TableRow>
+
                         <TableRow
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
@@ -218,7 +219,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_peso"
+                                android:id="@+id/tv_weight"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:textSize="20sp" />
@@ -239,7 +240,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_altura"
+                                android:id="@+id/tv_stature"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:textSize="20sp" />
@@ -260,7 +261,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_ombro"
+                                android:id="@+id/tv_shoulder"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:textSize="20sp" />
@@ -280,7 +281,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_torax_inspirado"
+                                android:id="@+id/tv_inspiredChest"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:textSize="20sp" />
@@ -300,19 +301,18 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_braco_relaxado_e"
+                                android:id="@+id/tv_leftRelaxedArm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text="E:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp" />
+
                             <TextView
-                                android:id="@+id/tv_braco_relaxado_d"
+                                android:id="@+id/tv_rightRelaxedArm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text=" D:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp"/>
 
                         </TableRow>
 
@@ -329,19 +329,18 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_coxa_e"
+                                android:id="@+id/tv_leftThigh"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text="E:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp"/>
+
                             <TextView
-                                android:id="@+id/tv_coxa_d"
+                                android:id="@+id/tv_rightThigh"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text=" D:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp"/>
 
                         </TableRow>
 
@@ -358,19 +357,17 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_antebraco_e"
+                                android:id="@+id/tv_leftForearm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text="E:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp" />
                             <TextView
-                                android:id="@+id/tv_antebraco_d"
+                                android:id="@+id/tv_rightForearm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text=" D:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp"/>
 
                         </TableRow>
 
@@ -387,19 +384,17 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_braco_contraido_e"
+                                android:id="@+id/tv_leftContractedArm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text="E:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp"/>
                             <TextView
-                                android:id="@+id/tv_braco_contraido_d"
+                                android:id="@+id/tv_rightContractedArm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text=" D:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp"/>
 
                         </TableRow>
 
@@ -416,7 +411,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_cintura"
+                                android:id="@+id/tv_waist"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:textSize="20sp" />
@@ -456,7 +451,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_quadril"
+                                android:id="@+id/tv_hip"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:textSize="20sp" />
@@ -476,19 +471,17 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tv_perna_e"
+                                android:id="@+id/tv_leftLeg"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text="E:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp"/>
                             <TextView
-                                android:id="@+id/tv_perna_d"
+                                android:id="@+id/tv_rightLeg"
                                 android:layout_weight="1"
                                 android:padding="10dip"
                                 android:text=" D:"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
+                                android:textSize="20sp"/>
 
                         </TableRow>
 

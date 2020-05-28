@@ -1,7 +1,7 @@
 package modelo;
 
 public class Measures {
-    float weight, stature, shoulder, inspiredChest, leftRelaxedArm, rightRelaxedArm, leftThigh, rightThigh, leftForearm,
+    private float weight, stature, shoulder, inspiredChest, leftRelaxedArm, rightRelaxedArm, leftThigh, rightThigh, leftForearm,
             rightForearm, leftContractedArm, rightContractedArm, waist, abdomen, hip, leftLeg, rightLeg;
 
     public Measures(float weight, float stature, float shoulder, float inspiredChest, float leftRelaxedArm, float rightRelaxedArm,

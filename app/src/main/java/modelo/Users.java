@@ -3,12 +3,11 @@ package modelo;
 import java.util.ArrayList;
 
 public class Users {
-    private int id;
-    private String name, email, telephone, info, typeUser, username;
+    private String id, name, email, telephone, info, typeUser, username;
     private ArrayList<Training> Training;
     private ArrayList<Measures> Measures;
 
-    public Users(int id, String name, String email, String telephone, String info, String typeUser, String username){
+    public Users(String id, String name, String email, String telephone, String info, String typeUser, String username){
         this.id = id;
         this.name = name;
         this.email = email;
@@ -20,11 +19,11 @@ public class Users {
         this.Measures = new ArrayList<>();
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

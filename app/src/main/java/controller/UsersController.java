@@ -12,12 +12,10 @@ import java.util.List;
 import modelo.Users;
 
 public class UsersController {
-    private static List<Users> user;
+    private static List<Users> users;
 
     public static List<Users> getUsers(String response ) throws  JSONException{
-        Log.d("RESULT USERS", response);
-
-        user = new ArrayList<>();
+        users = new ArrayList<>();
 
         JSONArray array = new JSONArray(response);
 
@@ -26,29 +24,27 @@ public class UsersController {
         for(int i = 0 ; i < array.length() ; i++) {
             JSONObject object = array.getJSONObject(i);
             users = converteUser(object);
-            user.add(users);
+            UsersController.users.add(users);
        }
-        return user;
+        return UsersController.users;
     }
-    public static Users getUser(String response) throws JSONException {
-        JSONArray array = new JSONArray(response);
-        Users user;
-        JSONObject object = array.getJSONObject(0);
-        user = converteUser(object);
 
-        return user;
+    public static Users getUser(String response) throws JSONException {
+        JSONObject object = new JSONObject(response);
+
+        return converteUser(object);
     }
 
     private static Users converteUser(JSONObject jsonObject) throws JSONException {
 
         return new Users(
-                jsonObject.getInt("id"),
-                jsonObject.getString("Name"),
-                jsonObject.getString("Email"),
-                jsonObject.getString("Telephone"),
-                jsonObject.getString("Info"),
-                jsonObject.getString("TypeUser"),
-                jsonObject.getString("Username")
+                jsonObject.getString("_id"),
+                jsonObject.getString("name"),
+                jsonObject.getString("email"),
+                jsonObject.getString("telephone"),
+                jsonObject.getString("info"),
+                jsonObject.getString("typeuser"),
+                jsonObject.getString("username")
         );
     }
 }
