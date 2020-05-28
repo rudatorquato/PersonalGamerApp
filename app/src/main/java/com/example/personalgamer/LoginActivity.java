@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -48,10 +49,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private NetworkManager manager;
     private NetworkObserver networkObserver;
 
+    private SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
 
         loadViews();
 
@@ -248,6 +253,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 for (Users user: users) {
                     if (user.getUsername().equals(username)) {
+                        // set session
+                        isLogged(preferences);
+                        putId(preferences, user.getId());
+
                         startActivity(new Intent(context, DashboardActivity.class)
                                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                         finish();
@@ -362,4 +371,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         return email.contains("@");
     }
 
+    private void isLogged(SharedPreferences preferences) {
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("is_logged", true);
+        editor.apply();
+    }
+
+    private void putId(SharedPreferences preferences, String id) {
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("id", id);
+        editor.apply();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (preferences.contains("is_logged")) {
+            startActivity(new Intent(context, DashboardActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            finish();
+        }
+    }
 }

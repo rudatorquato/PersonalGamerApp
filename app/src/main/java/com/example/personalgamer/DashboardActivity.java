@@ -6,8 +6,10 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
@@ -15,10 +17,14 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     private CoordinatorLayout coordinatorLayout;
     private CardView crd_perfil, crd_qrcode, crd_treino, crd_personal, crd_game;
 
+    private SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
 
         loadViews();
     }
@@ -70,5 +76,23 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_logout) {
+            preferences.edit()
+                    .remove("is_logged")
+                    .remove("id")
+                    .apply();
+
+            startActivity(new Intent(context, LoginActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
