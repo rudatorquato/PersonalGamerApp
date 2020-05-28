@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_cadastro"
+    android:id="@+id/activity_cadastra_exercicio"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="#657AFF"
-    tools:context=".CadastroActivity">
+    tools:context=".CadastraExercicioActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -58,7 +59,7 @@
 
                         <com.google.android.material.textfield.TextInputEditText
 
-                            android:id="@+id/edt_name"
+                            android:id="@+id/edt_training"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/nameTraning"
@@ -130,10 +131,12 @@
 
                         <android.inputmethodservice.ExtractEditText
 
+
+
                             android:id="@+id/edt_series"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/series"
+                            android:hint="@string/exercise"
                             android:textSize="20sp"
                             android:inputType="textPersonName"
                             android:maxLines="1"
@@ -179,7 +182,7 @@
 
 
                     <Button
-                        android:id="@+id/sign_up_button"
+                        android:id="@+id/btn_cadastrar"
                         style="?android:textAppearanceSmall"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"

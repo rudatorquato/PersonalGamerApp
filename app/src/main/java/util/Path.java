@@ -16,7 +16,7 @@ public class Path {
     public static String urlUpdateMeasures = ip + "personalgamer/users/measures/5eceaa62982d34e0922285f5";
 
     //Update traning/id
-    public static String urlUpdateTraning = ip + "personalgamer/users/traning/";
+    public static String urlUpdateTraning = ip + "personalgamer/users/traning/5eceaa62982d34e0922285f5";
 
     //Update User/id
     public static String urlUpdateUsers = ip + "personalgamer/users/";
