@@ -40,7 +40,6 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getMedidasrObserver());
-        //manager.get(Path.urlUpdateMeasures);
     }
 
     private void loadViews() {
@@ -104,23 +103,23 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
             JSONObject object = new JSONObject();
 
             try {
-                object.put("weight", edt_weight.getText());
-                object.put("stature", edt_stature.getText());
-                object.put("shoulder", edt_shoulder.getText());
-                object.put("inspired_chest", edt_inspiredChest.getText());
-                object.put("left_relaxed_arm", edt_leftRelaxedArm.getText());
-                object.put("right_relaxed_arm", edt_rightRelaxedArm.getText());
-                object.put("left_thigh", edt_leftThigh.getText());
-                object.put("right_thigh", edt_rightThigh.getText());
-                object.put("left_forearm", edt_leftForearm.getText());
-                object.put("right_forearm", edt_rightForearm.getText());
-                object.put("left_contracted_arm", edt_leftContractedArm.getText());
-                object.put("right_contracted_arm", edt_rightContractedArm.getText());
-                object.put("waist", edt_waist.getText());
-                object.put("abdomen", edt_abdomen.getText());
-                object.put("hip", edt_hip.getText());
-                object.put("left_leg", edt_leftLeg.getText());
-                object.put("right_leg", edt_rightLeg.getText());
+                object.put("weight", edt_weight.getText().toString());
+                object.put("stature", edt_stature.getText().toString());
+                object.put("shoulder", edt_shoulder.getText().toString());
+                object.put("inspired_chest", edt_inspiredChest.getText().toString());
+                object.put("left_relaxed_arm", edt_leftRelaxedArm.getText().toString());
+                object.put("right_relaxed_arm", edt_rightRelaxedArm.getText().toString());
+                object.put("left_thigh", edt_leftThigh.getText().toString());
+                object.put("right_thigh", edt_rightThigh.getText().toString());
+                object.put("left_forearm", edt_leftForearm.getText().toString());
+                object.put("right_forearm", edt_rightForearm.getText().toString());
+                object.put("left_contracted_arm", edt_leftContractedArm.getText().toString());
+                object.put("right_contracted_arm", edt_rightContractedArm.getText().toString());
+                object.put("waist", edt_waist.getText().toString());
+                object.put("abdomen", edt_abdomen.getText().toString());
+                object.put("hip", edt_hip.getText().toString());
+                object.put("left_leg", edt_leftLeg.getText().toString());
+                object.put("right_leg", edt_rightLeg.getText().toString());
 
                 measures.put("measures", object);
 
