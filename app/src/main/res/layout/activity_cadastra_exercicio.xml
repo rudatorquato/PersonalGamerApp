@@ -82,7 +82,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/sequence"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
@@ -129,16 +129,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <android.inputmethodservice.ExtractEditText
-
-
+                        <com.google.android.material.textfield.TextInputEditText
 
                             android:id="@+id/edt_series"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/exercise"
+                            android:hint="@string/place"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
@@ -156,7 +154,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/repetition"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
@@ -174,7 +172,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/charge"
                             android:textSize="20sp"
-                            android:inputType="textPersonName"
+                            android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:singleLine="true" />
 
