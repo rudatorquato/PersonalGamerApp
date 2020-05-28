@@ -53,6 +53,7 @@
                         android:gravity="center_horizontal">
 
                         <TextView
+                            android:layout_width="214dp"
                             android:layout_weight="1"
                             android:padding="10dip"
                             android:text="Nome:"
@@ -60,7 +61,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_nome"
+                            android:id="@+id/tv_name"
                             android:layout_weight="1"
                             android:padding="10dip"
                             android:textSize="20sp" />
@@ -74,6 +75,7 @@
                         android:gravity="center_horizontal">
 
                         <TextView
+                            android:layout_width="214dp"
                             android:layout_weight="1"
                             android:padding="10dip"
                             android:text="Email:"
@@ -95,6 +97,7 @@
                         android:gravity="center_horizontal">
 
                         <TextView
+                            android:layout_width="214dp"
                             android:layout_weight="1"
                             android:padding="10dip"
                             android:text="Telefone:"
@@ -102,7 +105,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_phone"
+                            android:id="@+id/tv_telephone"
                             android:layout_weight="1"
                             android:padding="10dip"
                             android:textSize="20sp" />
