@@ -43,6 +43,7 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getMedidasrObserver());
+        //manager.get(Path.urlUpdateMeasures);
     }
 
     private void loadViews() {
@@ -85,6 +86,7 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
 
                 @Override
                 public void doOnError(String response) {
+                    Log.d("ERRO", response);
 
                 }
             };
@@ -117,7 +119,7 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
 
             params2.put("measures", params.toString());
 
-            manager.post(params2, "url de cadastro de medidas aqui");
+            manager.post(params2, Path.urlUpdateMeasures);
         }
     }
 }
