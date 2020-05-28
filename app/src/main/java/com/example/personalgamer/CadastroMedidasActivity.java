@@ -148,10 +148,20 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
                 e.printStackTrace();
             }
 
-            Log.d("JSON", object.toString());
-            params.put("measures", object.toString());
+            JSONObject measures = new JSONObject();
 
-            manager.put(params, Path.urlUpdateMeasures);
+            try {
+                measures.put("measures", object);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            Log.d("JSON", measures.toString());
+//            params.put("measures", object.toString());
+
+//            manager.put(params, Path.urlUpdateMeasures);
+
+            manager.putJson(measures, Path.urlUpdateMeasures);
         }
     }
 }

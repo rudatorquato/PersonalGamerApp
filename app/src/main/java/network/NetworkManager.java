@@ -105,4 +105,22 @@ public class NetworkManager {
 
         ConnectionController.getInstance().addToRequestQueue(request);
     }
+
+    public void putJson (JSONObject jsonObject, String url) {
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, url, jsonObject,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject jsonObject) {
+                        System.out.println("Show");
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+
+        ConnectionController.getInstance().addToRequestQueue(request);
+    }
 }
