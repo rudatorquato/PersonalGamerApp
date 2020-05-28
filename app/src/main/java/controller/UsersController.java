@@ -19,14 +19,14 @@ public class UsersController {
 
         JSONArray array = new JSONArray(response);
 
-        Users users;
+        Users user;
 
         for(int i = 0 ; i < array.length() ; i++) {
             JSONObject object = array.getJSONObject(i);
-            users = converteUser(object);
-            UsersController.users.add(users);
+            user = converteUser(object);
+            users.add(user);
        }
-        return UsersController.users;
+        return users;
     }
 
     public static Users getUser(String response) throws JSONException {

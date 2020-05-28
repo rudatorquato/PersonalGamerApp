@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
@@ -21,7 +22,13 @@ import com.google.android.material.textfield.TextInputEditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+import controller.UsersController;
 import interfaces.NetworkObserver;
+import modelo.Users;
 import network.NetworkManager;
 import util.Mask;
 import util.Path;
@@ -37,6 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private boolean change;
     private String usertype = "aluno";
+    private List<Users> users;
 
     private NetworkManager manager;
     private NetworkObserver networkObserver;
@@ -84,12 +92,46 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             networkObserver = new NetworkObserver() {
                 @Override
                 public void doOnPost(String response) {
+                    if (change) {
+                        change = false;
+                        edt_username.setError(null);
 
+                        sign_up_switch.setClickable(true);
+                        sign_up_switch.setTextColor(Color.parseColor("#DCDCDC"));
+                        sign_up_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_border));
+
+                        sign_in_switch.setClickable(false);
+                        sign_in_switch.setTextColor(Color.parseColor("#808080"));
+                        sign_in_switch.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_white));
+
+                        v_user.setVisibility(View.GONE);
+                        v_phone.setVisibility(View.GONE);
+                        v_email.setVisibility(View.GONE);
+                        crd_switch_type.setVisibility(View.GONE);
+
+                        sign_in_button.setText("Entrar");
+
+                        Log.d("POST CADASTRO", "SHOW");
+                    } else {
+                        Log.d("POST LOGIN", "SHOW");
+                        startActivity(new Intent(context, DashboardActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                    }
                 }
 
                 @Override
                 public void doOnGet(String response) {
-                    Log.d("RESPONSE", response);
+                    new ArrayList<>();
+
+                    try {
+                        users = UsersController.getUsers(response);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (users != null) {
+                        attemptLogin();
+                    }
                 }
 
                 @Override
@@ -99,7 +141,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 @Override
                 public void doOnError(String response) {
-                    Log.d("ERRO", response);
+
                 }
             };
         }
@@ -200,6 +242,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             cancel = true;
         }
 
+        for (Users user: users) {
+            if (user.getUsername().equals(username)) {
+                cancel = false;
+                Toast.makeText(context, "ACHEI: " + username, Toast.LENGTH_LONG).show();
+                break;
+            }
+        }
+
         if (cancel) {
             focusView.requestFocus();
         } else {
@@ -211,10 +261,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                startActivity(new Intent(context, DashboardActivity.class)
-                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
-//                manager.post(params, Path.urlCadastroUsuarios);
+//                startActivity(new Intent(context, DashboardActivity.class)
+//                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                manager.postJson(params, Path.urlUsuarios);
 
 //                showProgress(true);
             } else {
