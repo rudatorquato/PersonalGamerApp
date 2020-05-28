@@ -79,7 +79,7 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
 
                 @Override
                 public void doOnPut(String response) {
-                    startActivity(new Intent(context, PerfilActivity.class)
+                    startActivity(new Intent(context, DashboardActivity.class)
                             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     finish();
                 }
