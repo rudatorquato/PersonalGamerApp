@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +26,7 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
     private Context context = this;
     private CoordinatorLayout coordinatorLayout;
 
-    private TextInputEditText edt_training, edt_place, edt_exercise, edt_image, edt_sequence,
+    private EditText edt_training, edt_place, edt_exercise, edt_image, edt_sequence,
             edt_series, edt_repetitions, edt_charge;
 
     private String training, place, exercise, image, sequence, series,repetitions, charge;
