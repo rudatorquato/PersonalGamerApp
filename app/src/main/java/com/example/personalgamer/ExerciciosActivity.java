@@ -71,7 +71,7 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
                     Log.d("RESPONSE_EXERCICIOS", response);
                     trainings = new ArrayList<>();
                     try {
-                        training = TraningController.getTraning(response);
+                        training = TraningController.getTranings(response);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

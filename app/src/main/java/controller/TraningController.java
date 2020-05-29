@@ -10,10 +10,17 @@ public class TraningController {
     public static Training getTraning(String response) throws JSONException {
         JSONObject object = new JSONObject(response);
 
-        return converteQrCode(object);
+        return converteTraining(object);
     }
 
-    private static Training converteQrCode(JSONObject jsonObject) throws JSONException {
+    public static Training getTranings(String response) throws JSONException{
+        JSONObject object = new JSONObject(response);
+        JSONObject trainings = object.getJSONObject("training");
+
+        return converteTraining(trainings);
+    }
+
+    private static Training converteTraining(JSONObject jsonObject) throws JSONException {
 
         return new Training(
                 jsonObject.getString("image"),
