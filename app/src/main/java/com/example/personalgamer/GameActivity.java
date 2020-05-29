@@ -13,6 +13,7 @@ import controller.UsersController;
 import interfaces.NetworkObserver;
 import modelo.User;
 import network.NetworkManager;
+import util.Path;
 
 public class GameActivity extends AppCompatActivity {
     private Context context = this;
@@ -32,6 +33,8 @@ public class GameActivity extends AppCompatActivity {
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getGameObserver());
+
+        manager.get(Path.urlGetUsuario.concat(preferences.getString("id", "none")));
     }
 
     private void loadViews() {
