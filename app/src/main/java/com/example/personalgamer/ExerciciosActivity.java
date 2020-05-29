@@ -54,8 +54,8 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
         manager = new NetworkManager();
         manager.setNetworkObserver(getExerciciosObserver());
 
-        Log.d("ID_LOGADO", preferences.getString("id", "none"));
-        manager.get(Path.urlGetUsuario + preferences.getString("id", "none"));
+            Log.d("ID_LOGADO", preferences.getString("id", "none"));
+        manager.get(Path.urlGetUsuario.concat(preferences.getString("id", "none")));
     }
 
     private NetworkObserver getExerciciosObserver() {

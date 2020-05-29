@@ -47,7 +47,8 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getUserObserver());
-        manager.get(Path.urlGetUsuario + preferences.getString("id", "none"));
+        //manager.get(Path.urlGetUsuario); //+ preferences.getString("id", "none"));
+        manager.get(Path.urlGetUsuario.concat(preferences.getString("id", "none")));
     }
 
     private void loadViews() {
