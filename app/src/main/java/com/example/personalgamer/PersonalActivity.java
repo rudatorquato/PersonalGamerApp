@@ -18,7 +18,7 @@ public class PersonalActivity extends AppCompatActivity {
     private Context context = this;
     private TextView tv_name, tv_email, tv_telephone;
 
-    private User user;
+    private User personal;
 
     private NetworkManager manager;
     private NetworkObserver networkObserver;
@@ -32,7 +32,7 @@ public class PersonalActivity extends AppCompatActivity {
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getUserObserver());
-        manager.get(Path.urlGetUsuario);
+        manager.get(Path.urlGetPersonal);
     }
 
     private void loadViews() {
@@ -54,15 +54,14 @@ public class PersonalActivity extends AppCompatActivity {
                 public void doOnGet(String response) {
 
                     try {
-                        user = UsersController.getUser(response);
-                        //measures = MeasuresController.getMeasures(response);
+                        personal = UsersController.getUser(response);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
-                    if (user != null) {
-                        setUser();
+                    if (personal != null) {
+                        setPersonal();
                     }
                 }
 
@@ -79,9 +78,9 @@ public class PersonalActivity extends AppCompatActivity {
         return networkObserver;
     }
 
-    public void setUser() {
-        tv_name.setText(user.getName());
-        tv_email.setText(user.getEmail());
-        tv_telephone.setText(user.getPhone());
+    public void setPersonal() {
+        tv_name.setText(personal.getName());
+        tv_email.setText(personal.getEmail());
+        tv_telephone.setText(personal.getPhone());
     }
 }

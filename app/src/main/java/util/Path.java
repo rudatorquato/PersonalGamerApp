@@ -12,6 +12,9 @@ public class Path {
     //Get Usuario
     public static String urlGetUsuario = ip + "personalgamer/users/";
 
+    //Get Personal
+    public static String urlGetPersonal = ip + "personalgamer/users/5ed1828966dd65b98537afa9";
+
     //Update Measures/id
     public static String urlUpdateMeasures = ip + "personalgamer/users/measures/";
 
