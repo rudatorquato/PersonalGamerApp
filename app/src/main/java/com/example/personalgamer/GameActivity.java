@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import org.json.JSONException;
 
@@ -17,14 +18,13 @@ import util.Path;
 
 public class GameActivity extends AppCompatActivity {
     private Context context = this;
+    private TextView tv_exp;
 
     private NetworkManager manager;
     private NetworkObserver networkObserver;
 
-
     private User user;
     private SharedPreferences preferences;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void loadViews() {
-
+        tv_exp = findViewById(R.id.tv_exp);
     }
 
     private NetworkObserver getGameObserver() {
@@ -56,14 +56,14 @@ public class GameActivity extends AppCompatActivity {
                 @Override
                 public void doOnGet(String response) {
                     try {
-                        exp = UsersController.getUser(response);
+                        user = UsersController.getUser(response);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
-                    if (exp != null) {
-                        setXp();
+                    if (user != null) {
+                        setExp();
                     }
                 }
 
@@ -81,7 +81,7 @@ public class GameActivity extends AppCompatActivity {
         return networkObserver;
     }
 
-    public void setXp() {
-
+    public void setExp() {
+        tv_exp.setText(user.getExp());
     }
 }
