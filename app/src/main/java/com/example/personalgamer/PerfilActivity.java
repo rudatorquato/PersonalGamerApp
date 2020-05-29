@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,17 +34,20 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
     private NetworkManager manager;
     private NetworkObserver networkObserver;
 
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
+        preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
+
         loadViews();
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getUserObserver());
-        manager.get(Path.urlGetUsuario);
+        manager.get(Path.urlGetUsuario + preferences.getString("id", "none"));
     }
 
     private void loadViews() {
