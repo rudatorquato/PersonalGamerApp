@@ -10,7 +10,7 @@ import org.json.JSONException;
 
 import controller.UsersController;
 import interfaces.NetworkObserver;
-import modelo.Users;
+import modelo.User;
 import network.NetworkManager;
 import util.Path;
 
@@ -18,7 +18,7 @@ public class PersonalActivity extends AppCompatActivity {
     private Context context = this;
     private TextView tv_name, tv_email, tv_telephone;
 
-    private Users user;
+    private User user;
 
     private NetworkManager manager;
     private NetworkObserver networkObserver;

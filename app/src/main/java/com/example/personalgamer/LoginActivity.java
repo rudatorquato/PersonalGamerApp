@@ -12,7 +12,6 @@ import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -28,7 +27,7 @@ import java.util.List;
 
 import controller.UsersController;
 import interfaces.NetworkObserver;
-import modelo.Users;
+import modelo.User;
 import network.NetworkManager;
 import util.Mask;
 import util.Path;
@@ -44,7 +43,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private boolean change;
     private String usertype = "aluno";
-    private List<Users> users;
+    private List<User> users;
 
     private NetworkManager manager;
     private NetworkObserver networkObserver;
@@ -251,7 +250,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     e.printStackTrace();
                 }
 
-                for (Users user: users) {
+                for (User user: users) {
                     if (user.getUsername().equals(username)) {
                         // set session
                         isLogged(preferences);

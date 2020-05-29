@@ -1,7 +1,5 @@
 package controller;
 
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,17 +7,17 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.Users;
+import modelo.User;
 
 public class UsersController {
-    private static List<Users> users;
+    private static List<User> users;
 
-    public static List<Users> getUsers(String response ) throws  JSONException{
+    public static List<User> getUsers(String response ) throws  JSONException{
         users = new ArrayList<>();
 
         JSONArray array = new JSONArray(response);
 
-        Users user;
+        User user;
 
         for(int i = 0 ; i < array.length() ; i++) {
             JSONObject object = array.getJSONObject(i);
@@ -29,15 +27,15 @@ public class UsersController {
         return users;
     }
 
-    public static Users getUser(String response) throws JSONException {
+    public static User getUser(String response) throws JSONException {
         JSONObject object = new JSONObject(response);
 
         return converteUser(object);
     }
 
-    private static Users converteUser(JSONObject jsonObject) throws JSONException {
+    private static User converteUser(JSONObject jsonObject) throws JSONException {
 
-        return new Users(
+        return new User(
                 jsonObject.getString("_id"),
                 jsonObject.getString("name"),
                 jsonObject.getString("email"),

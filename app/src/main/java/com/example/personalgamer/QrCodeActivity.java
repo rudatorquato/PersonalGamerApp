@@ -8,18 +8,36 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.google.zxing.Result;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import controller.UsersController;
+import interfaces.NetworkObserver;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
+import modelo.User;
+import network.NetworkManager;
+import util.Path;
 
 public class QrCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler, View.OnClickListener {
     private Context context = this;
     private static final int CAMERA_REQUEST_CODE = 100;
     private Button btn_comecar;
+
+    private NetworkManager manager;
+    private NetworkObserver networkObserver;
+
+    private SharedPreferences preferences;
+
+    private User user;
+    private String resultJson;
 
     ZXingScannerView ScannerView;
     @Override
@@ -27,7 +45,12 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code);
 
+        preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
+
         loadViews();
+
+        manager = new NetworkManager();
+        manager.setNetworkObserver(getUserObserver());
 
         ScannerView = new ZXingScannerView(this);
     }
@@ -37,12 +60,62 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
         btn_comecar.setOnClickListener(this);
     }
 
+    private NetworkObserver getUserObserver() {
+        if (networkObserver == null) {
+            networkObserver = new NetworkObserver() {
+                @Override
+                public void doOnPost(String response) {
+
+                }
+
+                @Override
+                public void doOnGet(String response) {
+                    try {
+                        user = UsersController.getUser(response);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (user != null) {
+                        putExp();
+                    }
+                }
+
+                @Override
+                public void doOnPut(String response) {
+                    startActivity(new Intent(context, InfoTreinoActivity.class)
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                            .putExtra("qrcode", resultJson));
+                    finish();
+                }
+
+                @Override
+                public void doOnError(String response) {
+
+                }
+            };
+        }
+        return networkObserver;
+    }
+
+    private void putExp() {
+        int exp = user.getExp() + 10;
+        JSONObject object = new JSONObject();
+
+        try {
+            object.put("exp", exp);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        manager.putJson(object, Path.urlUsuarios.concat((preferences.getString("id", "none"))));
+    }
+
     @Override
     public void handleResult(Result result) {
-        startActivity(new Intent(context, InfoTreinoActivity.class)
-                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                .putExtra("qrcode", result.toString()));
-        finish();
+        resultJson = result.toString();
+        manager.get(Path.urlGetUsuario.concat(preferences.getString("id", "none")));
     }
 
     @Override

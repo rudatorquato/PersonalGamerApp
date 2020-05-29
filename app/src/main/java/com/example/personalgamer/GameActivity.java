@@ -3,7 +3,6 @@ package com.example.personalgamer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -11,7 +10,7 @@ import org.json.JSONException;
 
 import controller.UsersController;
 import interfaces.NetworkObserver;
-import modelo.Users;
+import modelo.User;
 import network.NetworkManager;
 
 public class GameActivity extends AppCompatActivity {
@@ -20,7 +19,7 @@ public class GameActivity extends AppCompatActivity {
     private NetworkManager manager;
     private NetworkObserver networkObserver;
 
-    private Users exp;
+    private User exp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

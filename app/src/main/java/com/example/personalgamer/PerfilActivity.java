@@ -17,7 +17,7 @@ import controller.MeasuresController;
 import controller.UsersController;
 import interfaces.NetworkObserver;
 import modelo.Measures;
-import modelo.Users;
+import modelo.User;
 import network.NetworkManager;
 import util.Path;
 
@@ -29,7 +29,7 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
             tv_leftContractedArm, tv_rightContractedArm, tv_waist, tv_abdomen, tv_hip, tv_leftLeg, tv_rightLeg;
     private Button btn_medidas;
 
-    private Users user;
+    private User user;
     private Measures measures;
     private NetworkManager manager;
     private NetworkObserver networkObserver;
