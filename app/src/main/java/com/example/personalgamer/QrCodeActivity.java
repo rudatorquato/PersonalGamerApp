@@ -60,7 +60,7 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
         loadViews();
 
         Date date = new Date();
-        sdf = new SimpleDateFormat("yyyy-MM-dd");
+        sdf = new SimpleDateFormat("dd/MM/yyyy");
         shf = new SimpleDateFormat("HH:mm");
 
         tv_data.setText(sdf.format(date));
