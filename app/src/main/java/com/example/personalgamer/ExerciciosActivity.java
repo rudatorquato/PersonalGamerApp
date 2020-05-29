@@ -35,7 +35,7 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
     private TextView tv_training, tv_sequence, tv_place, tv_exercise, tv_series, tv_repetitions, tv_charge;
 
     private Training training;
-    private ArrayList<Training> trainings;
+    private ArrayList<Training> trainings = new ArrayList<>();
 
     private NetworkManager manager;
     private NetworkObserver networkObserver;
@@ -51,10 +51,12 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
 
         loadViews();
 
+        updateRecycleView(trainings);
+
         manager = new NetworkManager();
         manager.setNetworkObserver(getExerciciosObserver());
 
-            Log.d("ID_LOGADO", preferences.getString("id", "none"));
+        Log.d("ID_LOGADO", preferences.getString("id", "none"));
         manager.get(Path.urlGetUsuario.concat(preferences.getString("id", "none")));
     }
 
@@ -69,7 +71,7 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
                 @Override
                 public void doOnGet(String response) {
                     Log.d("RESPONSE_EXERCICIOS", response);
-                    trainings = new ArrayList<>();
+
                     try {
                         training = TraningController.getTranings(response);
                     } catch (JSONException e) {
@@ -119,16 +121,6 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
         registerForContextMenu(recyclerView);
         exerciciosAdapter.setOnClick(ExerciciosActivity.this);
     }
-
-//    public void setTraining() {
-//        tv_training.setText(training.getTraining());
-//        tv_sequence.setText(String.valueOf(training.getSequence()));
-//        tv_place.setText(training.getPlace());
-//        tv_exercise.setText(training.getExercise());
-//        tv_series.setText(String.valueOf(training.getSeries()));
-//        tv_repetitions.setText(String.valueOf(training.getRepetitions()));
-//        tv_charge.setText(String.valueOf(training.getCharge()));
-//    }
 
     @Override
     public void onClick(View v) {
