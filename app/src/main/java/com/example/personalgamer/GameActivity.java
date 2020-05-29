@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import org.json.JSONException;
 
@@ -15,11 +16,12 @@ import network.NetworkManager;
 
 public class GameActivity extends AppCompatActivity {
     private Context context = this;
+    private TextView tv_exp;
 
     private NetworkManager manager;
     private NetworkObserver networkObserver;
 
-    private User exp;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void loadViews() {
-
+        tv_exp = findViewById(R.id.tv_exp);
     }
 
     private NetworkObserver getGameObserver() {
@@ -47,13 +49,13 @@ public class GameActivity extends AppCompatActivity {
                 @Override
                 public void doOnGet(String response) {
                     try {
-                        exp = UsersController.getUser(response);
+                        user = UsersController.getUser(response);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
-                    if (exp != null) {
+                    if (user != null) {
                         setXp();
                     }
                 }
@@ -73,6 +75,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void setXp() {
-
+        tv_exp.setText(user.getExp());
     }
 }
