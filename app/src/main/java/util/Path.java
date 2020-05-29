@@ -10,7 +10,7 @@ public class Path {
     public static String urlUsuarios = ip + "personalgamer/users";
 
     //Get Usuario
-    public static String urlGetUsuario = ip + "personalgamer/users/5eceaa62982d34e0922285f5";
+    public static String urlGetUsuario = ip + "personalgamer/users/";
 
     //Update Measures/id
     public static String urlUpdateMeasures = ip + "personalgamer/users/measures/5eceaa62982d34e0922285f5";
