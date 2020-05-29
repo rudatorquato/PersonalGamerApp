@@ -90,7 +90,7 @@ public class NetworkManager {
 
     public void postJson (JSONObject jsonObject, String url) {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
-                response -> networkObserver.doOnPut(response.toString()),
+                response -> networkObserver.doOnPost(response.toString()),
                 error -> {
 
                 });
