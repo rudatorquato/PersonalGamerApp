@@ -59,7 +59,7 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
         edt_training = findViewById(R.id.edt_training);
         edt_place = findViewById(R.id.edt_place);
         edt_exercise = findViewById(R.id.edt_exercise);
-        //edt_image = findViewById(R.id.edt_image);
+        edt_image = findViewById(R.id.edt_image);
         edt_sequence = findViewById(R.id.edt_sequence);
         edt_series = findViewById(R.id.edt_series);
         edt_repetitions = findViewById(R.id.edt_repetitions);
@@ -113,7 +113,7 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
                     object.put("training", training);
                     object.put("place", place);
                     object.put("exercise", exercise);
-                    //object.put("image", image);
+                    object.put("image", image);
                     object.put("sequence", Integer.parseInt(sequence));
                     object.put("series", Integer.parseInt(series));
                     object.put("repetitions", Integer.parseInt(repetitions));
@@ -137,13 +137,13 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
         training = edt_training.getText().toString();
         place = edt_place.getText().toString();
         exercise = edt_exercise.getText().toString();
-        //image = edt_image.getText().toString();
+        image = edt_image.getText().toString();
         sequence = edt_sequence.getText().toString();
         series = edt_series.getText().toString();
         repetitions = edt_repetitions.getText().toString();
         charge = edt_charge.getText().toString();
 
-        if (training.isEmpty() || place.isEmpty() || exercise.isEmpty() || sequence.isEmpty() || series.isEmpty() ||
+        if (training.isEmpty() || place.isEmpty() || exercise.isEmpty() || image.isEmpty() || sequence.isEmpty() || series.isEmpty() ||
                 repetitions.isEmpty() || charge.isEmpty()) {
 
             Snackbar.make(coordinatorLayout, "Preencha todos os campos!", Snackbar.LENGTH_LONG).show();
