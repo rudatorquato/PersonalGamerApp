@@ -32,8 +32,6 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
     private Button btn_cadastrar;
     private ExerciciosAdapter exerciciosAdapter;
 
-    private TextView tv_training, tv_sequence, tv_place, tv_exercise, tv_series, tv_repetitions, tv_charge;
-
     private Training training;
     private ArrayList<Training> trainings = new ArrayList<>();
 
@@ -98,15 +96,6 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void loadViews() {
-        tv_training = findViewById(R.id.tv_training);
-        tv_sequence = findViewById(R.id.tv_sequence);
-        tv_place = findViewById(R.id.tv_place);
-        tv_exercise = findViewById(R.id.tv_exercise);
-        tv_series = findViewById(R.id.tv_series);
-        tv_repetitions = findViewById(R.id.tv_repetition);
-        tv_charge = findViewById(R.id.tv_charge);
-
-
         btn_cadastrar = findViewById(R.id.btn_cadastrar);
         btn_cadastrar.setOnClickListener(this);
     }
