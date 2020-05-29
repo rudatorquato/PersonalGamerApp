@@ -5,6 +5,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,6 +38,8 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
     private NetworkManager manager;
     private NetworkObserver networkObserver;
 
+    private SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,8 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getExercicioObserver());
+
+
     }
 
     private void loadViews() {
@@ -118,8 +123,10 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
                     e.printStackTrace();
                 }
 
+                preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
                 Log.d("JSON", mtraining.toString());
-                manager.putJson(mtraining, Path.urlUpdateTraning);
+                manager.putJson(mtraining, Path.urlUpdateTraning.concat(preferences.getString("id", "none")));
+
             }
         }
     }
