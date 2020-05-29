@@ -19,7 +19,6 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/img_gif"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:backgroundTint="@color/cardview_dark_background"
@@ -77,7 +76,6 @@
                             android:id="@+id/tv_data"
                             android:layout_weight="1"
                             android:padding="10dip"
-                            android:text="05/05/2020"
                             android:textStyle="bold"
                             android:textSize="30sp" />
 
@@ -102,7 +100,6 @@
                             android:id="@+id/tv_hora"
                             android:layout_weight="1"
                             android:padding="10dip"
-                            android:text="14:46"
                             android:textStyle="bold"
                             android:textSize="30sp" />
 
@@ -127,7 +124,6 @@
                             android:id="@+id/tv_treino"
                             android:layout_weight="1"
                             android:padding="10dp"
-                            android:text="TREINO"
                             android:textStyle="bold"
                             android:textSize="30sp" />
 

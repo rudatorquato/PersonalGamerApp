@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,11 +14,15 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.zxing.Result;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import controller.UsersController;
 import interfaces.NetworkObserver;
@@ -29,6 +34,7 @@ import util.Path;
 public class QrCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler, View.OnClickListener {
     private Context context = this;
     private static final int CAMERA_REQUEST_CODE = 100;
+    private TextView tv_data, tv_hora;
     private Button btn_comecar;
 
     private NetworkManager manager;
@@ -39,7 +45,11 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
     private User user;
     private String resultJson;
 
-    ZXingScannerView ScannerView;
+    private SimpleDateFormat sdf, shf;
+
+    private ZXingScannerView ScannerView;
+
+    @SuppressLint("SimpleDateFormat")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +59,13 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
 
         loadViews();
 
+        Date date = new Date();
+        sdf = new SimpleDateFormat("yyyy-MM-dd");
+        shf = new SimpleDateFormat("HH:mm");
+
+        tv_data.setText(sdf.format(date));
+        tv_hora.setText(shf.format(date));
+
         manager = new NetworkManager();
         manager.setNetworkObserver(getUserObserver());
 
@@ -56,6 +73,9 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
     }
 
     private void loadViews() {
+        tv_data = findViewById(R.id.tv_data);
+        tv_hora = findViewById(R.id.tv_hora);
+
         btn_comecar = findViewById(R.id.btn_comecar);
         btn_comecar.setOnClickListener(this);
     }
