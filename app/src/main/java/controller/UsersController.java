@@ -44,7 +44,8 @@ public class UsersController {
                 jsonObject.getString("phone"),
                 jsonObject.getString("info"),
                 jsonObject.getString("typeuser"),
-                jsonObject.getString("username")
+                jsonObject.getString("username"),
+                jsonObject.getInt("exp")
         );
     }
 }
