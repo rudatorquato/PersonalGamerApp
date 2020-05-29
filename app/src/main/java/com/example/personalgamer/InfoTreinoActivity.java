@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -14,22 +16,36 @@ import com.bumptech.glide.Glide;
 import org.json.JSONException;
 
 import controller.TraningController;
+import interfaces.NetworkObserver;
 import modelo.Training;
+import network.NetworkManager;
+import util.Path;
 
 public class InfoTreinoActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context = this;
     private TextView tv_training, tv_sequence, tv_place, tv_exercise, tv_series, tv_repetitions, tv_charge;
     private CoordinatorLayout coordinatorLayout;
     private ImageView img_gif;
+
     private String qrcode;
     private Training training;
+
+    private NetworkManager manager;
+    private NetworkObserver networkObserver;
+
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_treino);
 
+        preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
+
         loadViews();
+
+        manager = new NetworkManager();
+        manager.setNetworkObserver(getExerciciosObserver());
 
         Bundle bundle = getIntent().getExtras();
 
@@ -46,6 +62,8 @@ public class InfoTreinoActivity extends AppCompatActivity implements View.OnClic
             if (training != null) {
                 setTraining();
             }
+        } else {
+            manager.get(Path.urlGetUsuario.concat(preferences.getString("id", "none")));
         }
     }
 
@@ -63,6 +81,41 @@ public class InfoTreinoActivity extends AppCompatActivity implements View.OnClic
         coordinatorLayout = findViewById(R.id.activity_main);
     }
 
+    private NetworkObserver getExerciciosObserver() {
+        if (networkObserver == null) {
+            networkObserver = new NetworkObserver() {
+                @Override
+                public void doOnPost(String response) {
+
+                }
+
+                @Override
+                public void doOnGet(String response) {
+                    try {
+                        training = TraningController.getTraning(response);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (training != null) {
+                        setTraining();
+                    }
+                }
+
+                @Override
+                public void doOnPut(String response) {
+
+                }
+
+                @Override
+                public void doOnError(String response) {
+
+                }
+            };
+        }
+            return networkObserver;
+    }
+
     public void setTraining() {
         showGif(training.getImage());
         tv_training.setText(training.getTraining());
@@ -76,9 +129,7 @@ public class InfoTreinoActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
 
-        }
     }
 
     public void showGif(String gif) {
