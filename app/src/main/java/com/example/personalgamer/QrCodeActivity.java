@@ -12,7 +12,6 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;

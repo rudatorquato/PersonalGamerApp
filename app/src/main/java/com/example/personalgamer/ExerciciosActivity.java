@@ -11,8 +11,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TableRow;
-import android.widget.TextView;
 
 import org.json.JSONException;
 
