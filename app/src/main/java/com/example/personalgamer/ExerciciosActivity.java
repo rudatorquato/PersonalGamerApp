@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableRow;
@@ -52,6 +53,8 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getExerciciosObserver());
+
+        Log.d("ID_LOGADO", preferences.getString("id", "none"));
         manager.get(Path.urlGetUsuario + preferences.getString("id", "none"));
     }
 
@@ -65,6 +68,7 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
 
                 @Override
                 public void doOnGet(String response) {
+                    Log.d("RESPONSE_EXERCICIOS", response);
                     trainings = new ArrayList<>();
                     try {
                         training = TraningController.getTraning(response);
