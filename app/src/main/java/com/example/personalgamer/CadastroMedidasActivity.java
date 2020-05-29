@@ -48,7 +48,7 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
         setContentView(R.layout.activity_cadastro_medidas);
 
         preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
-        
+
         loadViews();
 
         manager = new NetworkManager();
