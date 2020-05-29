@@ -3,6 +3,7 @@ package com.example.personalgamer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -23,11 +24,14 @@ public class GameActivity extends AppCompatActivity {
     private NetworkObserver networkObserver;
 
     private User user;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
 
         loadViews();
 
