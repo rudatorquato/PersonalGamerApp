@@ -48,7 +48,7 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
 
         preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
 
-//        loadViews();
+        loadViews();
 
         manager = new NetworkManager();
         manager.setNetworkObserver(getExerciciosObserver());
@@ -91,19 +91,19 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
             return networkObserver;
     }
 
-//    private void loadViews() {
-//        tv_training = findViewById(R.id.tv_training);
-//        tv_sequence = findViewById(R.id.tv_sequence);
-//        tv_place = findViewById(R.id.tv_place);
-//        tv_exercise = findViewById(R.id.tv_exercise);
-//        tv_series = findViewById(R.id.tv_series);
-//        tv_repetitions = findViewById(R.id.tv_repetition);
-//        tv_charge = findViewById(R.id.tv_charge);
-//
-//
-//        btn_cadastrar = findViewById(R.id.btn_cadastrar);
-//        btn_cadastrar.setOnClickListener(this);
-//    }
+    private void loadViews() {
+        tv_training = findViewById(R.id.tv_training);
+        tv_sequence = findViewById(R.id.tv_sequence);
+        tv_place = findViewById(R.id.tv_place);
+        tv_exercise = findViewById(R.id.tv_exercise);
+        tv_series = findViewById(R.id.tv_series);
+        tv_repetitions = findViewById(R.id.tv_repetition);
+        tv_charge = findViewById(R.id.tv_charge);
+
+
+        btn_cadastrar = findViewById(R.id.btn_cadastrar);
+        btn_cadastrar.setOnClickListener(this);
+    }
 
     private void updateRecycleView(List<Training> trainings) {
         exerciciosAdapter = new ExerciciosAdapter(trainings);
