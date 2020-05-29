@@ -6,7 +6,6 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,7 +14,7 @@ import com.bumptech.glide.Glide;
 
 import org.json.JSONException;
 
-import controller.TraningController;
+import controller.TrainingController;
 import interfaces.NetworkObserver;
 import modelo.Training;
 import network.NetworkManager;
@@ -52,7 +51,7 @@ public class InfoTreinoActivity extends AppCompatActivity implements View.OnClic
             qrcode = bundle.getString("qrcode");
 
             try {
-                training = TraningController.getTraning(qrcode);
+                training = TrainingController.getTraining(qrcode);
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -77,7 +76,7 @@ public class InfoTreinoActivity extends AppCompatActivity implements View.OnClic
                 @Override
                 public void doOnGet(String response) {
                     try {
-                        training = TraningController.getTraning(response);
+                        training = TrainingController.getTrainings(response);
 
                     } catch (JSONException e) {
                         e.printStackTrace();

@@ -5,15 +5,15 @@ import org.json.JSONObject;
 
 import modelo.Training;
 
-public class TraningController {
+public class TrainingController {
 
-    public static Training getTraning(String response) throws JSONException {
+    public static Training getTraining(String response) throws JSONException {
         JSONObject object = new JSONObject(response);
 
         return converteTraining(object);
     }
 
-    public static Training getTranings(String response) throws JSONException{
+    public static Training getTrainings(String response) throws JSONException{
         JSONObject object = new JSONObject(response);
         JSONObject trainings = object.getJSONObject("training");
 

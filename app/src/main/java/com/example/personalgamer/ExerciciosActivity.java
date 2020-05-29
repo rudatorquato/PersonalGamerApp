@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import adapter.ExerciciosAdapter;
-import controller.TraningController;
+import controller.TrainingController;
 import interfaces.NetworkObserver;
 import interfaces.OnItemClicked;
 import modelo.Training;
@@ -69,7 +69,7 @@ public class ExerciciosActivity extends AppCompatActivity implements View.OnClic
                     Log.d("RESPONSE_EXERCICIOS", response);
 
                     try {
-                        training = TraningController.getTranings(response);
+                        training = TrainingController.getTrainings(response);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
