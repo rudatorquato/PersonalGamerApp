@@ -45,6 +45,8 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastra_exercicio);
 
+        preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
+        
         loadViews();
 
         manager = new NetworkManager();
@@ -123,7 +125,6 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
                     e.printStackTrace();
                 }
 
-                preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
                 Log.d("JSON", mtraining.toString());
                 manager.putJson(mtraining, Path.urlUpdateTraning.concat(preferences.getString("id", "none")));
 

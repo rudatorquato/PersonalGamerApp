@@ -5,6 +5,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,13 +38,17 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
     private Measures measures;
 
     private NetworkManager manager;
+
     private NetworkObserver networkObserver;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_medidas);
 
+        preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
+        
         loadViews();
 
         manager = new NetworkManager();
@@ -139,7 +144,7 @@ public class CadastroMedidasActivity extends AppCompatActivity implements View.O
                 }
 
                 Log.d("JSON", measures.toString());
-                manager.putJson(measures, Path.urlUpdateMeasures);
+                manager.putJson(measures, Path.urlUpdateMeasures.concat(preferences.getString("id", "none")));
             }
         }
     }
