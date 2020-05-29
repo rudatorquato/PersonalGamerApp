@@ -136,19 +136,19 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
         tv_stature.setText(String.valueOf(measures.getStature()));
         tv_shoulder.setText(String.valueOf(measures.getShoulder()));
         tv_inspiredChest.setText(String.valueOf(measures.getInspiredChest()));
-        tv_leftRelaxedArm.setText(String.valueOf(measures.getLeftRelaxedArm()));
-        tv_rightRelaxedArm.setText(String.valueOf(measures.getRightRelaxedArm()));
-        tv_leftThigh.setText(String.valueOf(measures.getLeftThigh()));
-        tv_rightThigh.setText(String.valueOf(measures.getRightThigh()));
-        tv_leftForearm.setText(String.valueOf(measures.getLeftForearm()));
-        tv_rightForearm.setText(String.valueOf(measures.getRightForearm()));
-        tv_leftContractedArm.setText(String.valueOf(measures.getLeftContractedArm()));
-        tv_rightContractedArm.setText(String.valueOf(measures.getRightContractedArm()));
+        tv_leftRelaxedArm.append(String.valueOf(measures.getLeftRelaxedArm()));
+        tv_rightRelaxedArm.append(String.valueOf(measures.getRightRelaxedArm()));
+        tv_leftThigh.append(String.valueOf(measures.getLeftThigh()));
+        tv_rightThigh.append(String.valueOf(measures.getRightThigh()));
+        tv_leftForearm.append(String.valueOf(measures.getLeftForearm()));
+        tv_rightForearm.append(String.valueOf(measures.getRightForearm()));
+        tv_leftContractedArm.append(String.valueOf(measures.getLeftContractedArm()));
+        tv_rightContractedArm.append(String.valueOf(measures.getRightContractedArm()));
         tv_waist.setText(String.valueOf(measures.getWaist()));
         tv_abdomen.setText(String.valueOf(measures.getAbdomen()));
         tv_hip.setText(String.valueOf(measures.getHip()));
-        tv_leftLeg.setText(String.valueOf(measures.getLeftLeg()));
-        tv_rightLeg.setText(String.valueOf(measures.getRightLeg()));
+        tv_leftLeg.append(String.valueOf(measures.getLeftLeg()));
+        tv_rightLeg.append(String.valueOf(measures.getRightLeg()));
     }
 
     @Override

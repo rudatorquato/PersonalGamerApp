@@ -304,14 +304,14 @@
                                 android:id="@+id/tv_leftRelaxedArm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text="E:"
+                                android:text="E: "
                                 android:textSize="20sp" />
 
                             <TextView
                                 android:id="@+id/tv_rightRelaxedArm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text=" D:"
+                                android:text=" D: "
                                 android:textSize="20sp"/>
 
                         </TableRow>
@@ -332,14 +332,14 @@
                                 android:id="@+id/tv_leftThigh"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text="E:"
+                                android:text="E: "
                                 android:textSize="20sp"/>
 
                             <TextView
                                 android:id="@+id/tv_rightThigh"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text=" D:"
+                                android:text=" D: "
                                 android:textSize="20sp"/>
 
                         </TableRow>
@@ -360,13 +360,13 @@
                                 android:id="@+id/tv_leftForearm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text="E:"
+                                android:text="E: "
                                 android:textSize="20sp" />
                             <TextView
                                 android:id="@+id/tv_rightForearm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text=" D:"
+                                android:text=" D: "
                                 android:textSize="20sp"/>
 
                         </TableRow>
@@ -387,13 +387,13 @@
                                 android:id="@+id/tv_leftContractedArm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text="E:"
+                                android:text="E: "
                                 android:textSize="20sp"/>
                             <TextView
                                 android:id="@+id/tv_rightContractedArm"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text=" D:"
+                                android:text=" D: "
                                 android:textSize="20sp"/>
 
                         </TableRow>
@@ -474,13 +474,13 @@
                                 android:id="@+id/tv_leftLeg"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text="E:"
+                                android:text="E: "
                                 android:textSize="20sp"/>
                             <TextView
                                 android:id="@+id/tv_rightLeg"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text=" D:"
+                                android:text=" D: "
                                 android:textSize="20sp"/>
 
                         </TableRow>

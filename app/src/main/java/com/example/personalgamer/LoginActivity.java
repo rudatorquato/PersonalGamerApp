@@ -213,7 +213,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.sign_in_button:
                 if (!change) {
-                    manager.get(Path.urlUsuarios);
+                    if(!TextUtils.isEmpty(edt_username.getText())) {
+                        manager.get(Path.urlUsuarios);
+                    } else {
+                        View focusView = edt_username;;
+                        focusView.requestFocus();
+                    }
                 } else {
                     attemptRegistration();
                 }
