@@ -82,6 +82,6 @@ public class PersonalActivity extends AppCompatActivity {
     public void setPersonal() {
         tv_name.setText(personal.getName());
         tv_email.setText(personal.getEmail().toLowerCase());
-        tv_telephone.setText(Mask.unmask(personal.getPhone()));
+        tv_telephone.setText(Mask.setMask(personal.getPhone()));
     }
 }
