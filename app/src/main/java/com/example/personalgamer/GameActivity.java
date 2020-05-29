@@ -7,7 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import org.json.JSONException;
+
+import controller.UsersController;
 import interfaces.NetworkObserver;
+import modelo.Users;
 import network.NetworkManager;
 
 public class GameActivity extends AppCompatActivity {
@@ -15,6 +19,8 @@ public class GameActivity extends AppCompatActivity {
 
     private NetworkManager manager;
     private NetworkObserver networkObserver;
+
+    private Users exp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +47,21 @@ public class GameActivity extends AppCompatActivity {
 
                 @Override
                 public void doOnGet(String response) {
-                    Log.d("RESPONSE", response);
+                    try {
+                        exp = UsersController.getUser(response);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (exp != null) {
+                        setXp();
+                    }
                 }
 
                 @Override
                 public void doOnPut(String response) {
-                    startActivity(new Intent(context, DashboardActivity.class)
-                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                    finish();
+
                 }
 
                 @Override
@@ -58,5 +71,9 @@ public class GameActivity extends AppCompatActivity {
             };
         }
         return networkObserver;
+    }
+
+    public void setXp() {
+
     }
 }
