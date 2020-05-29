@@ -82,6 +82,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void setExp() {
-        tv_exp.setText(user.getExp());
+        tv_exp.setText(String.valueOf(user.getExp()));
     }
 }
