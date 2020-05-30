@@ -129,7 +129,7 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
             e.printStackTrace();
         }
 
-        manager.putJson(object, Path.urlGetUsuario.concat((preferences.getString("id", "none"))));
+        manager.putJson(object, Path.urlUpdateUsers.concat((preferences.getString("id", "none"))));
     }
 
     @Override
