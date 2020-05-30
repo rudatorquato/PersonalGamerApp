@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
 
-        startActivity(new Intent(context, CadastraExercicioActivity.class)
+        startActivity(new Intent(context, LoginActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
         finish();
     }
