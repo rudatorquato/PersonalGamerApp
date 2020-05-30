@@ -67,7 +67,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_user"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="300dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -77,7 +77,8 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="256dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:orientation="vertical">
 
                         <!-- Linha 2 com 2 colunas -->
@@ -87,20 +88,21 @@
                             android:gravity="center_horizontal">
 
                             <TextView
-                                android:layout_width="590dp"
-                                android:layout_height="86dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text="Quest:"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
+                                android:text="COMPLETE UMA SEMANA NA SUA ACADEMIA"
+                                android:textStyle="bold"
+                                android:textSize="20sp"/>
 
-                            <TextView
-                                android:id="@+id/tv_nome"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:padding="10dip"
-                                android:textSize="20sp" />
+                            <ImageView
+                                android:id="@+id/dialog_image"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:backgroundTint="@color/cardview_dark_background"
+                                android:src="@drawable/ic_baseline_check_box_24" />
 
                         </TableRow>
 
@@ -111,47 +113,22 @@
                             android:gravity="center_horizontal">
 
                             <TextView
-                                android:layout_width="590dp"
-                                android:layout_height="86dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:padding="10dip"
-                                android:text="Quest:"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
+                                android:text="PERCA DOIS QUILOS DE MASSA GORDA"
+                                android:textStyle="bold"
+                                android:textSize="20sp"/>
 
-                            <TextView
-                                android:id="@+id/tv_email"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:padding="10dip"
-                                android:textSize="20sp" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:backgroundTint="@color/cardview_dark_background"
+                                android:src="@drawable/ic_baseline_check_box_24" />
 
                         </TableRow>
-
-                        <!-- Linha 4 com 2 colunas -->
-                        <TableRow
-                            android:layout_width="fill_parent"
-                            android:layout_height="84dp"
-                            android:gravity="center_horizontal">
-
-                            <TextView
-                                android:layout_width="590dp"
-                                android:layout_height="86dp"
-                                android:layout_weight="1"
-                                android:padding="10dip"
-                                android:text="Quest:"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tv_phone"
-                                android:layout_height="86dp"
-                                android:layout_weight="1"
-                                android:padding="10dip"
-                                android:textSize="20sp" />
-
-                        </TableRow>
-
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
