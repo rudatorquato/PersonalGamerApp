@@ -87,7 +87,6 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
         edt_training = findViewById(R.id.edt_training);
         edt_place = findViewById(R.id.edt_place);
         edt_exercise = findViewById(R.id.edt_exercise);
-        edt_image = findViewById(R.id.edt_image);
         edt_sequence = findViewById(R.id.edt_sequence);
         edt_series = findViewById(R.id.edt_series);
         edt_repetitions = findViewById(R.id.edt_repetitions);
@@ -167,7 +166,6 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
         training = edt_training.getText().toString();
         place = edt_place.getText().toString();
         exercise = edt_exercise.getText().toString();
-        image = edt_image.getText().toString();
         sequence = edt_sequence.getText().toString();
         series = edt_series.getText().toString();
         repetitions = edt_repetitions.getText().toString();
@@ -232,9 +230,10 @@ public class CadastraExercicioActivity extends AppCompatActivity implements View
             public void onItemClick(AdapterView<?> parent,
                                     View v, int position, long id) {
 
-                Toast.makeText(context, getResources().getResourceEntryName(imageIDs[position]), Toast.LENGTH_LONG).show();
-                edt_image.setText(getResources().getResourceEntryName(imageIDs[position]));
-                showGif(getResources().getResourceEntryName(imageIDs[position]));
+//                Toast.makeText(context, getResources().getResourceEntryName(imageIDs[position]), Toast.LENGTH_LONG).show();
+//                edt_image.setText(getResources().getResourceEntryName(imageIDs[position]));
+                image = getResources().getResourceEntryName(imageIDs[position]);
+                showGif(image);
             }
         });
 
